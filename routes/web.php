@@ -19,6 +19,7 @@ Auth::routes(['register' => false]);
 
 // 以下、ログインユーザのみ
 Route::get('edit', 'UserController@edit')->name('edit');
+Route::put('update', 'UserController@update')->name('update');
 Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->where('provider', 'github');
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->where('provider', 'github');
 
