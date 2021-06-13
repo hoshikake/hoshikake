@@ -19,7 +19,7 @@
                             @foreach ($posts as $post)
                                 <div class="col-3 mb-5">
                                     <div class="card">
-                                        <div class="card-header">{{ $post->user()->name }}</div>
+                                        <div class="card-header">{{ $post->user->name }}</div>
 
                                         <div class="card-body">
                                             <a href="{{ $post->work_url }}" class="btn btn-primary">ポートフォリオ</a>
