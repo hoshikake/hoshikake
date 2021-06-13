@@ -33,7 +33,6 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user): RedirectResponse
     {
-        dd($user, $request->all());
         $user->twitter_id = $request->twitter_id;
         $user->save();
 
