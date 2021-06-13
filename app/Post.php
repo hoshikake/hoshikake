@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
+/**
+ * @property int $user_id
+ * @property string $work_url
+ * @property string $repo_url
+ * @property string $comment
+ * @property boolean $is_published
+ */
 class Post extends Model
 {
     protected $guarded = [];

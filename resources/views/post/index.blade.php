@@ -14,38 +14,20 @@
                         </div>
                     @endif
 
-                    <div class="row">
-                        <div class="col-3 mb-5">
-                            <div class="card">
-                                <div class="card-header">タイトル</div>
-                                <div class="card-body">Twitter</div>
-                            </div>
+                    @if (count($posts) > 0)
+                        <div class="row">
+                            @foreach ($posts as $post)
+                                <div class="col-3 mb-5">
+                                    <div class="card">
+                                        <div class="card-header">{{ $post->user->name }}</div>
+                                        <div class="card-body">{{ $post->user->twitter_id }}</div>
+                                    </div>
+                                </div>
+                            @endforeach
                         </div>
-                        <div class="col-3 mb-5">
-                            <div class="card">
-                                <div class="card-header">タイトル</div>
-                                <div class="card-body">Twitter</div>
-                            </div>
-                        </div>
-                        <div class="col-3 mb-5">
-                            <div class="card">
-                                <div class="card-header">タイトル</div>
-                                <div class="card-body">Twitter</div>
-                            </div>
-                        </div>
-                        <div class="col-3 mb-5">
-                            <div class="card">
-                                <div class="card-header">タイトル</div>
-                                <div class="card-body">Twitter</div>
-                            </div>
-                        </div>
-                        <div class="col-3 mb-5">
-                            <div class="card">
-                                <div class="card-header">タイトル</div>
-                                <div class="card-body">Twitter</div>
-                            </div>
-                        </div>
-                    </div>
+                    @else
+                    <p>まだポートフォリオが登録されていません</p>
+                    @endif
 
                 </div>
             </div>

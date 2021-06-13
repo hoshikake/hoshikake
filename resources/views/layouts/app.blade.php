@@ -59,7 +59,7 @@
                                     <a class="dropdown-item" href="{{ route('edit') }}">
                                         設定変更
                                     </a>
-                                    <a class="dropdown-item" href="#">
+                                    <a class="dropdown-item" href="{{ route('posts.create') }}">
                                         ポートフォリオ設定
                                     </a>
 

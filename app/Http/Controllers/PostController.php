@@ -7,6 +7,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Post;
+use App\User;
 
 class PostController extends Controller
 {
@@ -38,7 +39,15 @@ class PostController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
-        Post::create($request->all());
+        /**
+         * @var User
+         */
+        $user = \Auth::user();
+        $post = new Post();
+        $post->fill($request->all());
+        $post->is_published = $request->is_published ? true : false;
+        $post->user_id = $user->id;
+        $post->save();
         return redirect()->route('posts.index')->with(['status' => '登録完了しました。']);
     }
 
