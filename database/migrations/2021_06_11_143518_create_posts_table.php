@@ -18,7 +18,6 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger('user_id')->comment('投稿者ID');
             $table->string('url')->comment('ポートフォリオURL');
             $table->text('comment')->comment('コメント');
-            $table->text('twitter_id')->comment('ツイッターアカウント');
             $table->timestamps();
         });
     }
