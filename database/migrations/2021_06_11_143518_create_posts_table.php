@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('work_url')->comment('ポートフォリオURL');
             $table->string('repo_url')->comment('リポジトリURL');
             $table->text('comment')->comment('コメント');
-            $table->boolean('is_publish')->comment('公開フラグ')->default(true);
+            $table->boolean('is_published')->comment('公開フラグ')->default(true);
             $table->timestamps();
         });
     }
