@@ -76,13 +76,13 @@ class LoginController extends Controller
         if ($account) {
             return $account->user;
         } else {
-            dd($providerUser->getAvatar());
             $user = User::whereEmail($providerUser->getEmail())->first();
 
             if (!$user) {
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
                     'name' => $providerUser->getName(),
+                    'avatar' => $providerUser->getAvatar(),
                 ]);
 
                 $user->identityProviders()->create([
