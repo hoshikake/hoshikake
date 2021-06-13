@@ -20,7 +20,7 @@ class UserController extends Controller
         /**
          * @var User
          */
-        $user = Auth::user();
+        $user = \Auth::user();
         return view('edit', ['user' => $user]);
     }
 
