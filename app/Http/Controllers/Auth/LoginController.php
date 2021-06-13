@@ -51,8 +51,6 @@ class LoginController extends Controller
     {
         try {
             $user = Socialite::driver($provider)->stateless()->user();
-            // debug 用
-            dd($user);
         } catch (Exception $e) {
             return redirect('/login');
         }
