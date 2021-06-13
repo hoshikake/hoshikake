@@ -11,7 +11,7 @@
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
 
-                            <div class="form-group row mt-5">
+                            <div class="form-group row">
                                 <label for="name" class="col-sm-4 col-form-label text-md-right">SNSログイン</label>
                                 <div class="col-md-6">
                                     <a href="{{ url('login/github') }}" class="btn btn-secondary"><i
