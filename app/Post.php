@@ -24,8 +24,8 @@ class Post extends Model
         return $this->hasMany(Comment::class);
     }
 
-    public function user(): HasOne
+    public function user(): BelongsTo
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 }
