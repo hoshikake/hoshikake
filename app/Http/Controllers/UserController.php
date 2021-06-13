@@ -33,6 +33,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $user): RedirectResponse
     {
+        dd($user, $request->all());
         $user->fill($request->all())->update();
 
         return redirect()->route('edit')->with(['status' => 'プロフィール更新しました。']);
