@@ -76,7 +76,7 @@ class LoginController extends Controller
         if ($account) {
             return $account->user;
         } else {
-            dd($providerUser);
+            dd($providerUser->getAvatar());
             $user = User::whereEmail($providerUser->getEmail())->first();
 
             if (!$user) {
