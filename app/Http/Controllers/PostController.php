@@ -18,10 +18,6 @@ class PostController extends Controller
      */
     public function index(): View
     {
-        foreach (Post::paginate(10) as $post) {
-            dd($post, $post->user);
-        }
-        dd(Post::paginate(10));
         return view('post.index', ['posts' => Post::paginate(10)]);
     }
 
