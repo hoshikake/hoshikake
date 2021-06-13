@@ -19,8 +19,21 @@
                             @foreach ($posts as $post)
                                 <div class="col-3 mb-5">
                                     <div class="card">
-                                        <div class="card-header">{{ $post->user->name }}</div>
-                                        <div class="card-body">{{ $post->user->twitter_id }}</div>
+                                        <div class="card-header">{{ $post->user()->name }}</div>
+
+                                        <div class="card-body">
+                                            <a href="{{ $post->work_url }}" class="btn btn-primary">ポートフォリオ</a>
+                                            <a href="{{ $post->repo_url }}" class="btn btn-primary">リポジトリ</a>
+
+                                            <img src="{{ $post->user()->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
+
+                                            @if ($post->user()->twitter_id )
+                                                <a href="{{ $post->user()->twitter_url }}" class="btn btn-primary">Twitter</a>
+                                            @else
+                                                <p>{{ $post->user()->name }}</p>
+                                            @endif
+
+                                        </div>
                                     </div>
                                 </div>
                             @endforeach

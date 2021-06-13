@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $avatar Githubのアイコンurl
  * @property string $twitter_id ツイッターアカウントID
  *
+ * @property-read string $twitter_url
+ *
  */
 class User extends Authenticatable
 {
@@ -43,5 +45,13 @@ class User extends Authenticatable
         // IdentityProviderモデルと紐付ける 1対多の関係
         // ... とは言うものの今回はGithubのみだからhasmanyじゃなくても良さそう
         return $this->hasMany(IdentityProvider::class);
+    }
+
+    public function getTwitterUrlAttribute(): string
+    {
+        if ($this->twitter_id) {
+            return "https://twitter.com/" . $this->twitter_id;
+        }
+        return '';
     }
 }
