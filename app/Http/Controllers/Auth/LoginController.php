@@ -67,7 +67,7 @@ class LoginController extends Controller
      * @param string $provider('github')
      * @return User
      */
-    public function findOfCreateUser($providerUser, $provider)
+    public function findOrCreateUser($providerUser, $provider)
     {
         $account = IdentityProvider::whereProviderName($provider)
             ->whereProviderId($providerUser->getId())
