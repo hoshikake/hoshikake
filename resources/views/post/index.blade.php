@@ -25,12 +25,12 @@
                                             <a href="{{ $post->work_url }}" class="btn btn-primary">ポートフォリオ</a>
                                             <a href="{{ $post->repo_url }}" class="btn btn-primary">リポジトリ</a>
 
-                                            <img src="{{ $post->user()->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
+                                            <img src="{{ $post->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
 
-                                            @if ($post->user()->twitter_id )
-                                                <a href="{{ $post->user()->twitter_url }}" class="btn btn-primary">Twitter</a>
+                                            @if ($post->user->twitter_id )
+                                                <a href="{{ $post->user->twitter_url }}" class="btn btn-primary">Twitter</a>
                                             @else
-                                                <p>{{ $post->user()->name }}</p>
+                                                <p>{{ $post->user->name }}</p>
                                             @endif
 
                                         </div>
