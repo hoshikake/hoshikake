@@ -80,3 +80,35 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 ## Auth Github
 
 [参考](https://qiita.com/tetsu-upstr/items/d1cccfac362872ed140c)
+
+## Gitインストール
+
+[CentOS7 に最新版の Git をインストールする方法](https://qiita.com/tomy0610/items/66e292f80aa1adc1161d)
+
+## VPS(Cent OS) に node入れた
+
+[CentOS 7 Node.js のインストール手順 (yum を利用)](https://qiita.com/daskepon/items/16a77868d38f8e585840)
+
+## 権限
+
+strage の 権限 調整しないと書き込みできない
+```bash
+
+chmod -R 777 storage/
+
+```
+
+## mariaDB
+
+ConohaのDBはmariaなので
+`/app/Providers/AppServiceProvider.php`に
+
+```php
+use Illuminate\Support\Facades\Schema;
+
+public function boot()
+{
+	Schema::defaultStringLength(191);
+}
+
+```
