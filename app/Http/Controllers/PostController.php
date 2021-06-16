@@ -24,10 +24,15 @@ class PostController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return View
+     * @return View|RedirectResponse
      */
-    public function create(): View
+    public function create()
     {
+        /** @var User */
+        $user = \Auth::user();
+        if ($user->is_posted) {
+            return redirect()->route('posts.edit');
+        }
         return view('post.create');
     }
 
@@ -54,35 +59,41 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return View
+     * @param  Request  $request
+     * @param  Post $post
+     * @return View|RedirectResponse
      */
-    public function show($id): View
+    public function show(Request $request, Post $post)
     {
-        return view('post.show', ['post' => Post::find($id)]);
+        return view('post.show', ['post' => $post]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return View
+     * @param  Request  $request
+     * @param  Post $post
+     * @return View|RedirectResponse
      */
-    public function edit($id): View
+    public function edit(Request $request, Post $post)
     {
-        return view('post.edit', ['post' => Post::find($id)]);
+        /** @var User */
+        $user = \Auth::user();
+        if (!$user->is_posted) {
+            return redirect()->route('posts.create');
+        }
+        return view('post.edit', ['post' => $post]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  Request  $request
-     * @param  int  $id
+     * @param  Post $post
      * @return RedirectResponse
      */
-    public function update(Request $request, $id): RedirectResponse
+    public function update(Request $request, Post $post): RedirectResponse
     {
-        $post = Post::find($id);
         $post->fill($request->all())->update();
         return redirect()->route('posts.index')->with(['status' => '編集完了しました。']);
     }
@@ -90,14 +101,14 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Post $post
      * @return RedirectResponse
      */
-    public function destroy($id): RedirectResponse
+    public function destroy(Post $post): RedirectResponse
     {
-        \DB::transaction(function ($id) {
-            Comment::where('post_id', $id)->delete();
-            Post::destroy($id);
+        \DB::transaction(function ($post) {
+            $post->comments()->delete();
+            $post->delete();
         });
         return redirect()->route('posts.index')->with(['status' => '削除完了しました。']);
     }
