@@ -94,7 +94,9 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post): RedirectResponse
     {
-        $post->fill($request->all())->update();
+        $post->fill($request->all());
+        $post->is_published = $request->is_published ? true : false;
+        $post->save();
         return redirect()->route('posts.index')->with(['status' => '編集完了しました。']);
     }
 
