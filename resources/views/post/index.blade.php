@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <a href="{{ route('comments.index') }}" class="btn btn-primary">
+                                                    <a href="{{ route('comments.index', $post) }}" class="btn btn-primary">
                                                         コメントをする
                                                     </a>
                                                 </div>
