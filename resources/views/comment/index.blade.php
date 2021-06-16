@@ -60,15 +60,7 @@
                         @foreach ($comments as $comment)
                             <div class="row">
                                 <div class="col mb-5">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <textarea class="form-control" cols="30" rows="10">{{ $comment->comment }}</textarea>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <textarea class="form-control">{{ $comment->comment }}</textarea>
                                 </div>
                             </div>
                         @endforeach
