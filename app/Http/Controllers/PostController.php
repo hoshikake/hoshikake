@@ -31,7 +31,7 @@ class PostController extends Controller
         /** @var User */
         $user = \Auth::user();
         if ($user->is_posted) {
-            return redirect()->route('posts.edit');
+            return redirect()->route('posts.edit', $user->post);
         }
         return view('post.create');
     }
