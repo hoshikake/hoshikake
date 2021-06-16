@@ -57,21 +57,21 @@
                     @endif
 
                     @if (count($comments) > 0)
-                        <div class="row">
-                            @foreach ($comments as $comment)
-                                <div class="col-3 mb-5">
+                        @foreach ($comments as $comment)
+                            <div class="row">
+                                <div class="col mb-5">
                                     <div class="card">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col">
-                                                    <textarea cols="30" rows="10">{{ $comment->comment }}</textarea>
+                                                    <textarea class="form-control" cols="30" rows="10">{{ $comment->comment }}</textarea>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     @else
                         <p>コメントはまだありません。</p>
                     @endif
