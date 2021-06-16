@@ -74,7 +74,7 @@ class User extends Authenticatable
      *
      * @return HasMany
      */
-    public function post(): HasMany
+    public function post()
     {
         return $this->hasMany(Post::class)->first();
     }
