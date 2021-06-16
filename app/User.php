@@ -72,10 +72,10 @@ class User extends Authenticatable
     /**
      * ポートフォリオ(一人一つなので)
      *
-     * @return HasMany
+     * @return Post
      */
-    public function post()
+    public function post(): Post
     {
-        return $this->hasMany(Post::class)->first();
+        return $this->posts()->first();
     }
 }
