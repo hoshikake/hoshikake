@@ -67,7 +67,7 @@
                         <div class="form-group row">
                             <div class="col-7">
                                 <div class="icheck-primary">
-                                    <input type="checkbox" name="is_published" id="is_published">
+                                    <input type="checkbox" name="is_published" id="is_published" @if($post->is_published) checked @endif>
                                     <label for="is_published">公開する</label>
                                 </div>
                             </div>

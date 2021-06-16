@@ -85,6 +85,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 [CentOS7 に最新版の Git をインストールする方法](https://qiita.com/tomy0610/items/66e292f80aa1adc1161d)
 
+## ドメイン設定
+
+[「お名前.com」で取得したドメインをConoHa VPSで使用する手順](https://pointsandlines.jp/server-infra/conoha-vps-domain-setting)
+
+## 本番環境でしか分からなかったやーつ(Laravel Socialite)
+
+[Laravel Socialiteの InvalidStateException エラー解決方法](https://qiita.com/hikarizm/items/44c1e9ff34726c9260d3)
+
 ## VPS(Cent OS) に node入れた
 
 [CentOS 7 Node.js のインストール手順 (yum を利用)](https://qiita.com/daskepon/items/16a77868d38f8e585840)
