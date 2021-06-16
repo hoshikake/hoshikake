@@ -38,21 +38,17 @@ class CommentController extends Controller
      * @param  Request  $request
      * @return RedirectResponse
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request, Post $post): RedirectResponse
     {
-        Comment::create($request->all());
-        return redirect()->route('comments.index')->with(['status' => '登録完了しました。']);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return View
-     */
-    public function show($id): View
-    {
-        return view('comment.show', ['comment' => Comment::find($id)]);
+        /**
+         * @var User
+         */
+        $user = \Auth::user();
+        $post->comments()->create([
+            'comment' => $request->comment,
+            'user_id' => $user->id,
+        ]);
+        return redirect()->route('comments.create', $post)->with(['status' => '投稿しました。']);
     }
 
     /**

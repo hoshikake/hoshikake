@@ -24,5 +24,6 @@ Route::get('login/{provider}', 'Auth\LoginController@redirectToProvider')->where
 Route::get('login/{provider}/callback', 'Auth\LoginController@handleProviderCallback')->where('provider', 'github');
 
 Route::resource('posts', 'PostController');
-Route::resource('comments', 'CommentController', ['except' => ['index', 'create', 'show']]);
+Route::resource('comments', 'CommentController', ['except' => ['index', 'create', 'show', 'sotre']]);
 Route::get('/comments/{post}', 'CommentController@index')->name('comments.index');
+Route::post('/comments/{post}', 'CommentController@store')->name('comments.store');
