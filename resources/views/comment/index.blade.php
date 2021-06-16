@@ -65,11 +65,11 @@
                             </div>
                             <div class="row">
                                 <div class="col mb-1">
-                                    <img src="{{ $post->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
-                                    @if ($post->user->twitter_id)
-                                        <a href="{{ $post->user->twitter_url }}" class="btn btn-primary" target="_blank">Twitter</a>
+                                    <img src="{{ $comments->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
+                                    @if ($comments->user->twitter_id)
+                                        <a href="{{ $comments->user->twitter_url }}" class="btn btn-primary" target="_blank">Twitter</a>
                                     @else
-                                        <p>{{ $post->user->name }}</p>
+                                        <p>{{ $comments->user->name }}</p>
                                     @endif
                                 </div>
                             </div>
