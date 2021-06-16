@@ -17,6 +17,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property string $twitter_id ツイッターアカウントID
  *
  * @property-read string $twitter_url
+ * @property-read boolean $is_posted ポートフォリオが登録されたか *
  *
  */
 class User extends Authenticatable
@@ -56,6 +57,11 @@ class User extends Authenticatable
             return "https://twitter.com/" . $this->twitter_id;
         }
         return '';
+    }
+
+    public function getIsPostedAttribute(): bool
+    {
+        return $this->posts()->exists();
     }
 
     public function posts(): HasMany

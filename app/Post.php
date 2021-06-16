@@ -14,19 +14,10 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @property string $repo_url
  * @property string $comment
  * @property boolean $is_published
- *
- * @property-read boolean $is_posted ポートフォリオが登録されたか
  */
 class Post extends Model
 {
     protected $guarded = [];
-
-    public function getIsPostedAttribute(): bool
-    {
-        /** @var User */
-        $user = \Auth::user();
-        return $user->posts()->exists();
-    }
 
     public function comments(): HasMany
     {
