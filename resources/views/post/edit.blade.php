@@ -55,7 +55,7 @@
                             <div class="col">
                                 <label for="comment">コメント</label>
                                 <textarea class="form-control {{ $errors->has('comment') ? 'is-invalid' : '' }}"
-                                    id="comment" name="comment" rows="3">{{ old('comment', $counselor->comment) }}</textarea>
+                                    id="comment" name="comment" rows="3">{{ old('comment', $post->comment) }}</textarea>
                                 @if ($errors->has('comment'))
                                     <div class="invalid-feedback">
                                         <strong>{{ $errors->first('comment') }}</strong>
