@@ -60,7 +60,7 @@
                         @foreach ($comments as $comment)
                             <div class="row">
                                 <div class="col mb-5">
-                                    <textarea class="form-control">{{ $comment->comment }}</textarea>
+                                    <p>{!! nl2br(e($comment->comment)) !!}</p>
                                 </div>
                             </div>
                         @endforeach
