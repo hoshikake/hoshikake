@@ -38,10 +38,15 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row mt-3">
+                        <div class="col">
+                            <a href="{{ route('posts.index') }}" class="btn btn-info">一覧に戻る</a>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-header">コメント</div>
 
                 <div class="card-body">
