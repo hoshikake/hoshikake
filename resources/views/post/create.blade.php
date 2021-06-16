@@ -73,8 +73,9 @@
                         </div>
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>
-                                更新</button>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="far fa-save"></i>更新
+                            </button>
                         </div>
                     </form>
 

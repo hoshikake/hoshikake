@@ -79,7 +79,27 @@
                     <p>コメントを投稿する</p>
                     <form action="{{ route('comments.store', $post) }}" method="post">
                         @csrf
-                        <textarea name="comment" id="comment" cols="30" rows="10">{{ old('comment') }}</textarea>
+
+                        {{-- コメント --}}
+                        <div class="form-group row">
+                            <div class="col">
+                                <label for="comment">コメント</label>
+                                <textarea class="form-control {{ $errors->has('comment') ? 'is-invalid' : '' }}"
+                                    id="comment" name="comment" rows="3">{{ old('comment') }}</textarea>
+                                @if ($errors->has('comment'))
+                                    <div class="invalid-feedback">
+                                        <strong>{{ $errors->first('comment') }}</strong>
+                                    </div>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="far fa-save"></i>投稿
+                            </button>
+                        </div>
+
                     </form>
                 </div>
             </div>
