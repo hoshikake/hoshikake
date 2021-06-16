@@ -44,7 +44,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col">
-                                                    <a href="#" class="btn btn-primary">
+                                                    <a href="{{ route('comments.index') }}" class="btn btn-primary">
                                                         コメントをする
                                                     </a>
                                                 </div>
@@ -55,7 +55,7 @@
                             @endforeach
                         </div>
                     @else
-                    <p>まだポートフォリオが登録されていません</p>
+                        <p>まだポートフォリオが登録されていません</p>
                     @endif
 
                 </div>

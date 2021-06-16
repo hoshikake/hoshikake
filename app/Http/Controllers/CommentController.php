@@ -6,17 +6,20 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use App\Comment;
+use App\Post;
 
 class CommentController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * コメント一覧
      *
+     * @param Request $request
+     * @param Post $post
      * @return View
      */
-    public function index(): View
+    public function index(Request $request, Post $post): View
     {
-        return view('comment.index', ['comments' => Comment::paginate(10)]);
+        return view('comment.index', ['post' => $post, 'comments' => $post->comments()->paginate(10)]);
     }
 
     /**
