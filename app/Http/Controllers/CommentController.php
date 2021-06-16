@@ -48,7 +48,7 @@ class CommentController extends Controller
             'comment' => $request->comment,
             'user_id' => $user->id,
         ]);
-        return redirect()->route('comments.create', $post)->with(['status' => '投稿しました。']);
+        return redirect()->route('comments.index', $post)->with(['status' => '投稿しました。']);
     }
 
     /**
