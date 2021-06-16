@@ -18,6 +18,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  *
  * @property-read string $twitter_url
  * @property-read boolean $is_posted ポートフォリオが登録されたか *
+ * @property-read Post $post 特定のポートフォリオ
  *
  */
 class User extends Authenticatable
@@ -70,11 +71,11 @@ class User extends Authenticatable
     }
 
     /**
-     * ポートフォリオ(一人一つなので)
+     * ポートフォリオ(一人一つ前提とのなので)
      *
      * @return Post
      */
-    public function post(): Post
+    public function getPostAttribute(): Post
     {
         return $this->posts()->first();
     }
