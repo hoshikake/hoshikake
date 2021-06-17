@@ -13,7 +13,7 @@ $(document).ready(() => {
         const id = $wrapper.data('id');
         const comment = $(`.comment-wrapper[data-id=${id}] .comment`).text();
         $textarea.val(comment);
-        const $form = $(`#form-update[data-id=${id}]`);
+        const $form = $(`.form-update[data-id=${id}]`);
         const $row = $('<div class="row"></div>');
         const $col8 = $('<div class="col-8"></div>');
         const $col3 = $('<div class="col-3"></div>');
