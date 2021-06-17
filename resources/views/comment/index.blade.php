@@ -58,6 +58,9 @@
 
                     @if (count($comments) > 0)
                         @foreach ($comments as $comment)
+                            <form action="{{ route('comments.update', $comment->post) }}" method="post" id="form-update" data-id="{{ $comment->id }}">
+                                @csrf
+                            </form>
                             <div class="row">
                                 <div class="col border mb-1 comment-wrapper" data-id="{{ $comment->id }}">
                                     <div class="row">
