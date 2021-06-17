@@ -58,7 +58,7 @@
 
                     @if (count($comments) > 0)
                         @foreach ($comments as $comment)
-                            <div class="border">
+                            <div class="border mb-1">
                                 <div class="row">
                                     <div class="col">
                                         <p>{!! nl2br(e($comment->comment)) !!}</p>
@@ -68,12 +68,12 @@
                                     <div class="col mb-1">
                                         <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
                                         @if ($comment->user->twitter_id)
-                                            <a href="{{ $comment->user->twitter_url }}" class="btn btn-primary" target="_blank">Twitter</a>
+                                            <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">Twitter</a>
                                         @else
                                             <p>{{ $comment->user->name }}</p>
                                         @endif
                                         @if ($comment->user->id === Auth::user()->id)
-                                            <button type="submit" class="btn btn-sm btn-primary">編集</button>
+                                            <button type="submit" class="btn btn-sm btn-primary btn-edit-comment">編集</button>
                                         @endif
                                     </div>
                                 </div>
