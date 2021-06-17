@@ -58,19 +58,24 @@
 
                     @if (count($comments) > 0)
                         @foreach ($comments as $comment)
-                            <div class="row">
-                                <div class="col">
-                                    <p>{!! nl2br(e($comment->comment)) !!}</p>
+                            <div class="border">
+                                <div class="row">
+                                    <div class="col">
+                                        <p>{!! nl2br(e($comment->comment)) !!}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col mb-1">
-                                    <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
-                                    @if ($comment->user->twitter_id)
-                                        <a href="{{ $comment->user->twitter_url }}" class="btn btn-primary" target="_blank">Twitter</a>
-                                    @else
-                                        <p>{{ $comment->user->name }}</p>
-                                    @endif
+                                <div class="row">
+                                    <div class="col mb-1">
+                                        <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
+                                        @if ($comment->user->twitter_id)
+                                            <a href="{{ $comment->user->twitter_url }}" class="btn btn-primary" target="_blank">Twitter</a>
+                                        @else
+                                            <p>{{ $comment->user->name }}</p>
+                                        @endif
+                                        @if ($comment->user->id === Auth::user()->id)
+                                            <button type="submit" class="btn btn-sm btn-primary">編集</button>
+                                        @endif
+                                    </div>
                                 </div>
                             </div>
                         @endforeach
