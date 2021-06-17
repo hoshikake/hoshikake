@@ -14,13 +14,17 @@ $(document).ready(() => {
         const comment = $(`.comment-wrapper[data-id=${id}] .comment`).text();
         $textarea.val(comment);
         const $form = $(`#form-update[data-id=${id}]`);
-        const $row = $('<div class="row"></div>').append($('<div class="col-8"></div>'));
+        const $row = $('<div class="row"></div>');
+        const $col8 = $('<div class="col-8"></div>');
+        const $col3 = $('<div class="col-3"></div>');
         const $btnEdit = $('<button class="btn btn-sm btn-primary"></button>').text('更新');
 
-        $form.append($textarea);
-        $form.append($btnEdit);
-        $row.append($form);
+        $col8.append($textarea);
+        $col3.append($btnEdit);
+        $row.append($col8).append($col3);
 
-        $wrapper.append($row);
+        $form.append($row);
+
+        $wrapper.append($form);
     });
 });
