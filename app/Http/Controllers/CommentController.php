@@ -72,7 +72,7 @@ class CommentController extends Controller
     public function update(Request $request, Comment $comment): RedirectResponse
     {
         $comment->fill($request->all())->update();
-        return redirect()->route('comments.index')->with(['status' => '編集完了しました。']);
+        return redirect()->route('comments.index', $comment->post)->with(['status' => '編集完了しました。']);
     }
 
     /**
