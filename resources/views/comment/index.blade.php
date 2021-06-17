@@ -58,7 +58,7 @@
 
                     @if (count($comments) > 0)
                         @foreach ($comments as $comment)
-                            <form action="{{ route('comments.update', $comment->post) }}" method="post" id="form-update" data-id="{{ $comment->id }}">
+                            <form action="{{ route('comments.update', $comment) }}" method="post" id="form-update" data-id="{{ $comment->id }}">
                                 @csrf
                                 @method('PUT')
                             </form>

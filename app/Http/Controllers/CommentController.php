@@ -66,12 +66,11 @@ class CommentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  Request  $request
-     * @param  int  $id
+     * @param  Comment  $comment
      * @return RedirectResponse
      */
-    public function update(Request $request, $id): RedirectResponse
+    public function update(Request $request, Comment $comment): RedirectResponse
     {
-        $comment = Comment::find($id);
         $comment->fill($request->all())->update();
         return redirect()->route('comments.index')->with(['status' => '編集完了しました。']);
     }
