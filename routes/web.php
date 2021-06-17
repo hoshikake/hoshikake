@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
-Route::middleware('auth:client')->group(function () {
+Route::middleware('auth')->group(function () {
 
     Route::get('edit', 'UserController@edit')->name('edit');
     Route::put('/{user}', 'UserController@update')->name('update');
