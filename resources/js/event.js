@@ -13,7 +13,9 @@ $(document).ready(() => {
         const id = $wrapper.data('id');
         const comment = $(`.comment-wrapper[data-id=${id}] .comment`).text();
         $textarea.val(comment);
+        $row = $('<div class="row"></div>').append($('<div class="col"></div>'));
+        $row.append($textarea);
 
-        $wrapper.append($textarea);
+        $wrapper.append($row);
     });
 });
