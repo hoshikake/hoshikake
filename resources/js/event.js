@@ -10,6 +10,10 @@ $(document).ready(() => {
         $textarea.addClass('form-control');
         $textarea.addClass('edit-comment-form');
 
+        const id = $wrapper.data('id');
+        const comment = $(`.comment-wrapper[data-id=${id}] .comment`).text();
+        $textarea.val(comment);
+
         $wrapper.append($textarea);
     });
 });

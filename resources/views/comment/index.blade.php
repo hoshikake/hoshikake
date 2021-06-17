@@ -58,10 +58,10 @@
 
                     @if (count($comments) > 0)
                         @foreach ($comments as $comment)
-                            <div class="border mb-1 comment-wrapper">
+                            <div class="border mb-1 comment-wrapper" data-id="{{ $comment->id }}">
                                 <div class="row">
                                     <div class="col">
-                                        <p>{!! nl2br(e($comment->comment)) !!}</p>
+                                        <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
                                     </div>
                                 </div>
                                 <div class="row">
