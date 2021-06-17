@@ -58,7 +58,7 @@
 
                     @if (count($comments) > 0)
                         @foreach ($comments as $comment)
-                            <div class="border mb-1">
+                            <div class="border mb-1 comment-wrapper">
                                 <div class="row">
                                     <div class="col">
                                         <p>{!! nl2br(e($comment->comment)) !!}</p>
