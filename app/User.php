@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
+ * @property int $id ID
  * @property string $name 初期値はGithubの表示名
  * @property string $email Githubのメールアドレス
  * @property string $avatar Githubのアイコンurl
