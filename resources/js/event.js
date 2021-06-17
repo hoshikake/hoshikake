@@ -17,10 +17,10 @@ $(document).ready(() => {
         const $row = $('<div class="row"></div>').append($('<div class="col-8"></div>'));
         const $btnEdit = $('<button class="btn btn-sm btn-primary"></button>').text('更新');
 
-        $row.append($textarea);
-        $row.append($btnEdit);
-        $form.append($row);
+        $form.append($textarea);
+        $form.append($btnEdit);
+        $row.append($form);
 
-        $wrapper.append($form);
+        $wrapper.append($row);
     });
 });
