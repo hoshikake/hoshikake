@@ -18,12 +18,14 @@
                         星駆web制作企画特設サイト
                     </h1>
                 </div>
-                <div class="login">
-                    @auth
-                        <a href="{{ url('/posts') }}">Gallery</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                    @endauth
+                <div class="login-wrapper">
+                    <div class="login">
+                        @auth
+                            <a href="{{ url('/posts') }}">Gallery</a>
+                        @else
+                            <a href="{{ route('login') }}">Login</a>
+                        @endauth
+                    </div>
                 </div>
                 <div class="content-text">
                     <h2>企画内容</h2>
