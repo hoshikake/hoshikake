@@ -26,9 +26,9 @@ body{
         border-radius: 10%;
         width: 112px;
         height: 72px;
-    }
-    .login :hover{
-        box-shadow: 3px 2px 3px rgb(38, 71, 99);
+        &:hover{
+            box-shadow: 3px 2px 3px rgb(38, 71, 99);
+        }
     }
 
     .content-text{
