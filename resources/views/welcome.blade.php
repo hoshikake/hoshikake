@@ -32,5 +32,12 @@
                 </div>
             </div>
         </div>
+        <div class="bubbles">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+        </div>
     </body>
 </html>
