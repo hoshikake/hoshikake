@@ -5,12 +5,12 @@
     text-align: center;
     color: #333;
 }
-a{
-    text-decoration: none;
-}
 
 body{
     height: 100%;
+    a{
+        text-decoration: none;
+    }
 }
 
 .content{
@@ -20,6 +20,7 @@ body{
     .login{
         display: block;
         padding: 1em 2em;
+        margin: 0 auto;
         margin-top: 4em;
         border: 1px solid rgb(118, 215, 245);
         background-color: rgb(138, 195, 221);
