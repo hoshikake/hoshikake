@@ -13,9 +13,11 @@
     <body>
         <div class="top-wrapper">
             <div class="content">
-                <h1>
-                    星駆web制作企画特設サイト
-                </h1>
+                <div class="title">
+                    <h1>
+                        星駆web制作企画特設サイト
+                    </h1>
+                </div>
                 <div class="login">
                     @auth
                         <a href="{{ url('/posts') }}">Gallery</a>
@@ -24,6 +26,7 @@
                     @endauth
                 </div>
                 <div class="content-text">
+                    <h2>企画内容</h2>
                     <p>第一回：星駆水族館　（制作期間：6/12～7/2　掲示期間：7/3～）</p>
                     <p>第二回：企画中…</p>
                 </div>
