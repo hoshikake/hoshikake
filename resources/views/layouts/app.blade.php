@@ -22,52 +22,51 @@
 </head>
 <body>
     <div id="app">
-            <div class="container flex-between">
-                <div class="link-top">
-                    <a href="{{ url('/') }}">
-                        top
-                    </a>
-                    <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
-                <div id="link-login">
-                    <!-- Right Side Of Navbar -->
-                    <ul>
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-
-                        @else
-                        <div>
-                            <ul class="menu">
-                                <li>
-                                {{ Auth::user()->name }} ▼
-                                    <ul class="menuSub">
-                                        <li><a href="{{ route('edit') }}">設定変更</a></li>
-                                        <li><a href="{{ route('posts.create') }}">ポートフォリオ設定</a></li>
-                                        <li>
-                                            <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        @endguest
-                    </ul>
-                </div>
+        <div class="container flex-between">
+            <div class="link-top">
+                <a href="{{ url('/') }}">
+                    top
+                </a>
+                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span></span>
+                </button>
             </div>
-    @yield('content')
+            <div id="link-login">
+                <!-- Right Side Of Navbar -->
+                <ul>
+                    <!-- Authentication Links -->
+                    @guest
+                        <li>
+                            <a href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
 
+                    @else
+                    <div>
+                        <ul class="menu">
+                            <li>
+                            {{ Auth::user()->name }} ▼
+                                <ul class="menuSub">
+                                    <li><a href="{{ route('edit') }}">設定変更</a></li>
+                                    <li><a href="{{ route('posts.create') }}">ポートフォリオ設定</a></li>
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    @endguest
+                </ul>
+            </div>
+        </div>
     </div>
+    @yield('content')
     <div class="bubbles">
             <div class="bubble"></div>
             <div class="bubble"></div>
