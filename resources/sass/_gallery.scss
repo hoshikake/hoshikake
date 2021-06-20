@@ -20,12 +20,12 @@ $sub-color: #eee;
     width: 100px;
     margin-left: 1px;
     padding: 5px;
-    background: #57b2dc;
+    background: $sub-color;
   }
 
   .menuSub {
     position: absolute;
-    margin-left: -6px;
+    // margin-left: -6px;
     padding: 0;
     display: none;
   }
@@ -36,7 +36,7 @@ $sub-color: #eee;
     margin-right: -5px;
     margin-bottom: -5px;
     display: block;
-    color: #fff;
+    color: #333;
     text-decoration: none;
   }
 
