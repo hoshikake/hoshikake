@@ -32,10 +32,10 @@ $(document).ready(() => {
 
     $("ul.menu li").hover(
         function() {
-          $(".menuSub:not(:animated)", this).slideDown();
+          $(".menu-sub:not(:animated)", this).slideDown();
         },
         function() {
-          $(".menuSub", this).slideUp();
+          $(".menu-sub", this).slideUp();
         }
       );
 });

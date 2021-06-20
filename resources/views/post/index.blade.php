@@ -24,7 +24,7 @@
                                     @else
                                         <p>{{ $post->user->name }}</p>
                                     @endif
-
+                                    <p >{!! nl2br(e($post->comment)) !!}</p>
 
                                     <a href="{{ route('comments.index', $post) }}" >
                                         コメントをする
