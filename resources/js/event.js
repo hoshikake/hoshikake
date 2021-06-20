@@ -30,32 +30,12 @@ $(document).ready(() => {
 
     });
 
-    $('.drop-down').on("click", function() {
-        if ($(this).attr('class') === 'selected') {
-            // メニュー非表示
-            $(this).removeClass('selected').next('ul').slideUp('fast');
-        } else {
-            // 表示しているメニューを閉じる
-            $('.drop-down').removeClass('selected');
-            $('ul').hide();
-            // メニュー表示
-            $(this).addClass('selected').next('ul').slideDown('fast');
+    $("ul.menu li").hover(
+        function() {
+          $(".menuSub:not(:animated)", this).slideDown();
+        },
+        function() {
+          $(".menuSub", this).slideUp();
         }
-    });
-
-    // マウスカーソルがメニュー上/メニュー外
-    $('.drop-down').hover(function(){
-        over_flg = true;
-    }, function(){
-        over_flg = false;
-    });
-
-    // メニュー領域外をクリックしたらメニューを閉じる
-    $('body').click(function() {
-        if (over_flg == false) {
-            $('.drop-down').removeClass('selected');
-            $('ul').slideUp('fast');
-        }
-    });
-
+      );
 });

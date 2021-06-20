@@ -22,7 +22,6 @@
 </head>
 <body>
     <div id="app">
-        <nav class="">
             <div class="container flex-between">
                 <div class="link-top">
                     <a href="{{ url('/') }}">
@@ -42,18 +41,23 @@
                             </li>
 
                         @else
-                            <span>メニュー 1</span>
-                            <div class="drop-down-wrapper">
-                                <span class="drop-down"> {{ Auth::user()->name }} </span>
-                                <ul>
-                                    <li><a href="{{ route('edit') }}">設定変更</a></li>
-                                    <li><a href="{{ route('posts.create') }}">ポートフォリオ設定</a></li>
-                                    <li><a href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                       {{ __('Logout') }}
-                                    </a></li>
-                                </ul>
-                            </div>
+                        <div>
+                            <ul class="menu">
+                                <li>
+                                {{ Auth::user()->name }}
+                                    <ul class="menuSub">
+                                        <li><a href="{{ route('edit') }}">設定変更</a></li>
+                                        <li><a href="{{ route('posts.create') }}">ポートフォリオ設定</a></li>
+                                        <li>
+                                            <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                             <!-- <li class="nav-item">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -70,9 +74,9 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
-                                    </a> -->
-                                <!-- </div> -->
-                            <!-- </li> -->
+                                    </a>
+                                </div>
+                            </li> -->
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                     @csrf
                                 </form>
@@ -80,7 +84,6 @@
                     </ul>
                 </div>
             </div>
-        </nav>
     @yield('content')
 
     </div>
