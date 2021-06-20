@@ -32,7 +32,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                 </div>
-                <div id="navbarSupportedContent">
+                <div id="link-login">
                     <!-- Right Side Of Navbar -->
                     <ul>
                         <!-- Authentication Links -->
@@ -40,12 +40,24 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
+
                         @else
-                            <li class="nav-item">
+                            <span>メニュー 1</span>
+                            <div class="drop-down">
+                                <span> {{ Auth::user()->name }} </span>
+                                <ul>
+                                    <li><a href="{{ route('edit') }}">設定変更</a></li>
+                                    <li><a href="{{ route('posts.create') }}">ポートフォリオ設定</a></li>
+                                    <li><a href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                       {{ __('Logout') }}
+                                    </a></li>
+                                </ul>
+                            </div>
+                            <!-- <li class="nav-item">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
-
                                 <div class="" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('edit') }}">
                                         設定変更
@@ -58,13 +70,12 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
+                                    </a> -->
+                                <!-- </div> -->
+                            <!-- </li> -->
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
                         @endguest
                     </ul>
                 </div>
@@ -79,6 +90,7 @@
             <div class="bubble"></div>
             <div class="bubble"></div>
             <div class="bubble"></div>
-        </div>
+    </div>
+
 </body>
 </html>
