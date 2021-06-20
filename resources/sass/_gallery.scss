@@ -36,14 +36,18 @@ $sub-color: #eee;
     margin: 0;
   }
 
-  .menuSub {
+  .menu-sub {
     position: absolute;
     right: 0;
     padding: 5px;
     display: none;
   }
 
-  .menuSub li a {
+  .menu-margin{
+      margin-top: 11px;
+  }
+
+  .menu-sub li a {
     padding: 5px;
     margin-left: -5px;
     margin-right: -5px;
@@ -53,7 +57,7 @@ $sub-color: #eee;
     text-decoration: none;
   }
 
-  .menuSub li a:hover {
+  .menu-sub li a:hover {
     background: #6989bb;
   }
 
