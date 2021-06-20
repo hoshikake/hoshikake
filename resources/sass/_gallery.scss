@@ -5,6 +5,20 @@ $sub-color: #eee;
     justify-content: space-between;
 }
 
+// ドロップダウン
+#menu div {
+  position: relative;
+}
+
+span {
+  cursor: pointer;
+}
+
+ul {
+  display: none;
+  position: absolute;
+}
+
 .container{
     padding: 1em 0;
     background-color: $sub-color;

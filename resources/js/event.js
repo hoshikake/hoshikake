@@ -30,13 +30,13 @@ $(document).ready(() => {
 
     });
 
-    $('span').on("click", function() {
+    $('.drop-down').on("click", function() {
         if ($(this).attr('class') === 'selected') {
             // メニュー非表示
             $(this).removeClass('selected').next('ul').slideUp('fast');
         } else {
             // 表示しているメニューを閉じる
-            $('span').removeClass('selected');
+            $('.drop-down').removeClass('selected');
             $('ul').hide();
             // メニュー表示
             $(this).addClass('selected').next('ul').slideDown('fast');
@@ -44,7 +44,7 @@ $(document).ready(() => {
     });
 
     // マウスカーソルがメニュー上/メニュー外
-    $('span,ul').hover(function(){
+    $('.drop-down').hover(function(){
         over_flg = true;
     }, function(){
         over_flg = false;
@@ -53,7 +53,7 @@ $(document).ready(() => {
     // メニュー領域外をクリックしたらメニューを閉じる
     $('body').click(function() {
         if (over_flg == false) {
-            $('span').removeClass('selected');
+            $('.drop-down').removeClass('selected');
             $('ul').slideUp('fast');
         }
     });

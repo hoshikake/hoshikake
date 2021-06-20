@@ -43,8 +43,8 @@
 
                         @else
                             <span>メニュー 1</span>
-                            <div class="drop-down">
-                                <span> {{ Auth::user()->name }} </span>
+                            <div class="drop-down-wrapper">
+                                <span class="drop-down"> {{ Auth::user()->name }} </span>
                                 <ul>
                                     <li><a href="{{ route('edit') }}">設定変更</a></li>
                                     <li><a href="{{ route('posts.create') }}">ポートフォリオ設定</a></li>
