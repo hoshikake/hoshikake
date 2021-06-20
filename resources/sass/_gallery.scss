@@ -20,28 +20,28 @@ $sub-color: #eee;
     width: 100px;
     margin-left: 1px;
     padding: 5px;
-    background: #444444;
+    background: #57b2dc;
   }
 
   .menuSub {
     position: absolute;
-    margin-left: -6px;
+    // margin-left: -6px;
     padding: 0;
     display: none;
   }
 
   .menuSub li a {
     padding: 5px;
-    margin-left: -5px;
-    margin-right: -5px;
-    margin-bottom: -5px;
+    // margin-left: -5px;
+    // margin-right: -5px;
+    // margin-bottom: -5px;
     display: block;
     color: #fff;
     text-decoration: none;
   }
 
   .menuSub li a:hover {
-    background: #FFCA7B;
+    background: #6989bb;
   }
 
 
