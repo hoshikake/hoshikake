@@ -33,6 +33,7 @@ $(document).ready(() => {
     $("ul.menu li").hover(
         function() {
           $(".menu-sub:not(:animated)", this).slideDown();
+          console.log("OK")
         },
         function() {
           $(".menu-sub", this).slideUp();
