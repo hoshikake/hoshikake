@@ -20,13 +20,13 @@ body{
     .login a{
         display: block;
         padding: 1em 2em;
+        margin: 0 auto;
         margin-top: 4em;
         border: 1px solid rgb(118, 215, 245);
         background-color: rgb(138, 195, 221);
         border-radius: 10%;
-        width: 72px;
-        height: 32px;
-        margin: 0 auto;
+        width: 56px;
+        height: 28px;
         &:hover{
             box-shadow: 3px 2px 3px rgb(38, 71, 99);
             text-decoration: none;

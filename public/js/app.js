@@ -49872,6 +49872,8 @@ var app = new Vue({
   el: '#app'
 });
 
+__webpack_require__(/*! ./event.js */ "./resources/js/event.js");
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -49988,6 +49990,44 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/event.js":
+/*!*******************************!*\
+  !*** ./resources/js/event.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+ // 以下宣言でjquery 警告無視
+
+/* jshint -W117 */
+
+$(document).ready(function () {
+  $('.btn-edit-comment').on('click', function (e) {
+    $('.fotm-edit-comment').remove();
+    $('.btn-update-comment').remove();
+    var $wrapper = $(e.target).closest('.comment-wrapper');
+    var $textarea = $('<textarea name="comment"></textarea>');
+    $textarea.addClass('form-control');
+    $textarea.addClass('fotm-edit-comment');
+    var id = $wrapper.data('id');
+    var comment = $(".comment-wrapper[data-id=".concat(id, "] .comment")).text();
+    $textarea.val(comment);
+    var $form = $(".form-update[data-id=".concat(id, "]"));
+    var $row = $('<div class="row"></div>');
+    var $col8 = $('<div class="col-8"></div>');
+    var $col3 = $('<div class="col-3"></div>');
+    var $btnEdit = $('<button class="btn btn-sm btn-primary btn-update-comment"></button>').text('更新');
+    $col8.append($textarea);
+    $col3.append($btnEdit);
+    $row.append($col8).append($col3);
+    $form.append($row);
+    $wrapper.append($form);
+  });
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -50006,8 +50046,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\projects\hoshikake\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\projects\hoshikake\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\laravel\hoshikake\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\laravel\hoshikake\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
