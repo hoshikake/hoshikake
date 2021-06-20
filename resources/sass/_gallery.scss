@@ -106,8 +106,11 @@ $sub-color: #eee;
         border-radius: 50%;
         .card-header{
             margin: 6em 4em 2em 4em;
-            padding: 3em 0 1em 0;
+            padding: 2em 0 1em 0;
             border-bottom: 1px solid #333;
+        }
+        .gallery-link p{
+            margin: 1em 0;
         }
         .gallery-link a{
             padding: 0.5em;
