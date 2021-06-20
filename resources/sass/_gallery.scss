@@ -2,12 +2,15 @@
     display: flex;
     justify-content: space-between;
 }
-li{
-    list-style: none;
-    margin: 0 2em;
-}
 
 .container{
     padding: 1em 0;
     background-color: #eee;
+    a{
+        margin: 0 2em;
+    }
+    li{
+        list-style: none;
+        margin: 0 2em;
+    }
 }
