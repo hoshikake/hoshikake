@@ -1,21 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="gallery-container">
     <div class="card">
         <div class="card-header">ギャラリー</div>
 
         <div class="card-body">
-            @if (session('status'))
-                <div class="alert alert-success" role="alert">
-                    {{ session('status') }}
-                </div>
-            @endif
-
             @if (count($posts) > 0)
-                <div class="row">
+                <div class="">
                     @foreach ($posts as $post)
-                        <div class="col-3 mb-5">
                             <div class="card">
                                 <div class="card-header">{{ $post->user->name }}</div>
 
