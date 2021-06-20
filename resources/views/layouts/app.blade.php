@@ -44,7 +44,7 @@
                         <div>
                             <ul class="menu">
                                 <li>
-                                {{ Auth::user()->name }}▼
+                                {{ Auth::user()->name }} ▼
                                     <ul class="menuSub">
                                         <li><a href="{{ route('edit') }}">設定変更</a></li>
                                         <li><a href="{{ route('posts.create') }}">ポートフォリオ設定</a></li>
