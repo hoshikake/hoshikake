@@ -2,10 +2,10 @@
 
 @section('content')
 <div class="gallery-container">
-    <div class="card">
-        <div class="card-header">gallery</div>
+    <div class="">
+        <div class="">gallery</div>
 
-        <div class="card-body">
+        <div class="">
             @if (count($posts) > 0)
                 <div class="">
                     @foreach ($posts as $post)
