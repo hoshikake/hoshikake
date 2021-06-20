@@ -33,7 +33,13 @@ $sub-color: #eee;
             display: inline-block;
             margin: 1em 2em 2em 2em;
             padding: 1em 2em;
-            border: 1px solid #333;
+            border: 1px solid #6b9cb2;
+            border-radius: 10%;
+            background-color: #57b2dc;
+            &:hover{
+                box-shadow: 3px 2px 3px #333;
+            }
+
         }
     }
 }
