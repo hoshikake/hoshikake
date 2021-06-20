@@ -4,6 +4,10 @@ $sub-color: #eee;
     display: flex;
     justify-content: space-between;
 }
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
 .container{
     padding: 1em 0;
     background-color: $sub-color;
@@ -113,6 +117,7 @@ $sub-color: #eee;
             margin: 1em 0;
         }
         .gallery-link a{
+            font-size: 1em;
             padding: 0.5em;
             margin: 0.5em;
             border: 1px solid #6b9cb2;

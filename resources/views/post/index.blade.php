@@ -12,25 +12,26 @@
                     <div class="card-header">
                         {{ $post->user->name }}
                     </div>
-                    <div class="gallery-link">
-                        <p>
-                            <a href="{{ $post->work_url }}"  target="_blank">ポートフォリオ</a>
-                        </p>
-                        <p>
-                            <a href="{{ $post->repo_url }}"  target="_blank">リポジトリ</a>
-                        </p>
-                        <img src="{{ $post->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
-                        @if ($post->user->twitter_id)
-                            <a href="{{ $post->user->twitter_url }}"  target="_blank">Twitter</a>
-                        @else
-                            <p>{{ $post->user->name }}</p>
-                        @endif
-                        <p class="gallery-comment">{!! nl2br(e($post->comment)) !!}</p>
-                        <p>
-                            <a href="{{ route('comments.index', $post) }}" >
-                                コメントをする
-                            </a>
-                        </p>
+                    <div class="flex-center">
+                        <div class="gallery-link">
+                                <a href="{{ $post->work_url }}"  target="_blank">ポートフォリオ</a>
+                                <a href="{{ $post->repo_url }}"  target="_blank">リポジトリ</a>
+
+                                <img src="{{ $post->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
+                            @if ($post->user->twitter_id)
+                                <a href="{{ $post->user->twitter_url }}"  target="_blank">Twitter</a>
+                            @else
+                                <p>{{ $post->user->name }}</p>
+                            @endif
+                            <p>
+                                <a href="{{ route('comments.index', $post) }}" >
+                                    コメントをする
+                                </a>
+                            </p>
+                        </div>
+                        <div class="gallery-comment">
+                            <p>{!! nl2br(e($post->comment)) !!}</p>
+                        </div>
                     </div>
                 @endforeach
             </div>
