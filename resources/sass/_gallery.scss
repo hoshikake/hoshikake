@@ -4,6 +4,17 @@ $sub-color: #eee;
     display: flex;
     justify-content: space-between;
 }
+.container{
+    padding: 1em 0;
+    background-color: $sub-color;
+    a{
+        margin: 0 2em;
+    }
+    li{
+        list-style: none;
+        margin: 0 2em;
+    }
+}
 
 // ドロップダウン
 
@@ -48,17 +59,6 @@ $sub-color: #eee;
 
 
 //   画面
-.container{
-    padding: 1em 0;
-    background-color: $sub-color;
-    a{
-        margin: 0 2em;
-    }
-    li{
-        list-style: none;
-        margin: 0 2em;
-    }
-}
 
 .card{
     width: 300px;
