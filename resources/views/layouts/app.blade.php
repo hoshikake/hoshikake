@@ -46,7 +46,7 @@
                             <li>
                             {{ Auth::user()->name }} ▼
                                 <ul class="menu-sub">
-                                    <li class="menu-margin"><a href="{{ route('edit') }}">設定変更</a></li>
+                                    <li class="menu-margin"><a href="{{ route('edit') }}">twitter設定</a></li>
                                     <li><a href="{{ route('posts.create') }}">ポートフォリオ設定</a></li>
                                     <li>
                                         <a href="{{ route('logout') }}"
@@ -58,9 +58,9 @@
                             </li>
                         </ul>
                     </div>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            @csrf
-                        </form>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
                     @endguest
                 </ul>
             </div>

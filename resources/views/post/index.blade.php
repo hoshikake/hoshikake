@@ -7,8 +7,8 @@
     </div>
     <div class="gallery-main">
         @if (count($posts) > 0)
-            <div class="card">
-                @foreach ($posts as $post)
+        @foreach ($posts as $post)
+                <div class="card">
                     <div class="card-header">
                         {{ $post->user->name }}
                     </div>
@@ -33,8 +33,8 @@
                             <p>{!! nl2br(e($post->comment)) !!}</p>
                         </div>
                     </div>
+                </div>
                 @endforeach
-            </div>
         @else
             <p>まだポートフォリオが登録されていません</p>
         @endif
