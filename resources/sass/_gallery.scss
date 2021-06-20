@@ -2,8 +2,11 @@
     display: flex;
     justify-content: space-between;
 }
+li{
+    list-style: none;
+}
 
 .container{
-    padding: 2em 0;
+    padding: 1em 0;
     background-color: #eee;
 }
