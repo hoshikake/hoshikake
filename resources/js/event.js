@@ -30,8 +30,7 @@ $(document).ready(() => {
 
     });
 
-    $("ul.menu li").hover(
-        function() {
+    $("ul.menu li").on("hover", function() {
           $(".menuSub:not(:animated)", this).slideDown();
         },
         function() {
