@@ -13,8 +13,12 @@
                         {{ $post->user->name }}
                     </div>
                     <div class="gallery-link">
-                        <a href="{{ $post->work_url }}"  target="_blank"><p>ポートフォリオ</p></a>
-                        <a href="{{ $post->repo_url }}"  target="_blank"><p>リポジトリ</p></a>
+                        <p>
+                            <a href="{{ $post->work_url }}"  target="_blank">ポートフォリオ</a>
+                        </p>
+                        <p>
+                            <a href="{{ $post->repo_url }}"  target="_blank">リポジトリ</a>
+                        </p>
                         <img src="{{ $post->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
                         @if ($post->user->twitter_id)
                             <a href="{{ $post->user->twitter_url }}"  target="_blank">Twitter</a>
@@ -22,10 +26,11 @@
                             <p>{{ $post->user->name }}</p>
                         @endif
                         <p class="gallery-comment">{!! nl2br(e($post->comment)) !!}</p>
-
-                        <a href="{{ route('comments.index', $post) }}" >
-                            <p>コメントをする</p>
-                        </a>
+                        <p>
+                            <a href="{{ route('comments.index', $post) }}" >
+                                コメントをする
+                            </a>
+                        </p>
                     </div>
                 @endforeach
             </div>
