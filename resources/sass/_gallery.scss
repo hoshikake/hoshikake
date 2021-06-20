@@ -18,13 +18,13 @@ $sub-color: #eee;
 }
 
 .card{
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     background-color: $sub-color;
     margin: 2em auto;
     border-radius: 50%;
     .card-header{
-        margin: 0 1em;
+        margin: 2em 4em;
         border-bottom: 1px solid #333;
     }
 }
