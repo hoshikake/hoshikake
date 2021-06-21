@@ -47,7 +47,7 @@
             @endif
 
             <div class="">
-                <button type="submit" class="">
+                <button type="submit" class="" require>
                     <i class="far fa-save"></i>投稿
                 </button>
             </div>
@@ -64,7 +64,7 @@
                         @if ($comment->user->twitter_id)
                             <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">{{ $post->user->name }}</a>
                         @else
-                        <p>{{ $post->user->name }}</p>
+                            <p>{{ $post->user->name }}</p>
                         @endif
                         @if ($comment->user->id === Auth::user()->id)
                             <button type="submit" class="btn btn-sm btn-primary btn-edit-comment">編集</button>
@@ -83,7 +83,5 @@
 <a href="{{ route('posts.index') }}" class="comment-btn">一覧に戻る</a>
 @endsection
 
-<!-- こめんとをぬるでおくるとエラー -->
-<!-- Twitterのないときは何も表示しない -->
 <!-- 編集効かない -->
 <!-- できるコメントは一つ？？ -->
