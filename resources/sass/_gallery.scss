@@ -177,13 +177,16 @@ $sub-color: #eee;
         margin: 2em auto;
         border-radius: 50%;
         .card-header{
-            margin: 6em 4em 2em 4em;
+            margin: 6em 4em 1em 4em;
             padding: 2em 0 1em 0;
             border-bottom: 1px solid #333;
         }
         .site-form{
             font-size: 0.5em;
             .site-form-text{
+                outline: none;
+                border: 1px solid #333;
+                border-radius: 10%;
                 display: block;
                 margin: 0 auto;
                 padding: 4px;
@@ -192,7 +195,9 @@ $sub-color: #eee;
                 display: block;
             }
             .site-textarea{
-
+                outline: none;
+                border: 1px solid #333;
+                border-radius: 10%;
             }
             .site-btn{
                 display: inline-block;
