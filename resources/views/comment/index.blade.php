@@ -61,7 +61,7 @@
                 <div class="comment-wrapper" data-id="{{ $comment->id }}">
 
                     <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
-                    <p class="comment-display">{!! nl2br(e($comment->comment)) !!}</p>
+                    <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
                     @if ($comment->user->twitter_id)
                         <a href="{{ $comment->user->twitter_url }}" class="" target="_blank">{{ $comment->user->name }}</a>
                     @else

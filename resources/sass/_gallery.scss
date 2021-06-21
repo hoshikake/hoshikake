@@ -269,7 +269,7 @@ $sub-color: #eee;
         display: block;
         margin: 0.5em;
     }
-    .comment-textarea{
+    .comment-textarea, .form-edit-comment{
         width: 400px;
         height: 100px;
         outline: none;
@@ -283,7 +283,7 @@ $sub-color: #eee;
     .comment-list{
         margin-top: 1em;
     }
-    .comment-display{
+    .comment{
         overflow-wrap: break-word;
         width: 400px;
         margin: 0 auto;
@@ -291,7 +291,7 @@ $sub-color: #eee;
     .comment-edit{
         margin-bottom: 1em;
     }
-    .comment-btn{
+    .comment-btn, .btn-update-comment{
         display: inline-block;
         padding: 0.1em;
         border: 1px solid #6b9cb2;
@@ -301,5 +301,4 @@ $sub-color: #eee;
             box-shadow: 2px 1px 2px #6989bb;
         }
     }
-
 }

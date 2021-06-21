@@ -4,13 +4,11 @@
 /* jshint -W117 */
 $(document).ready(() => {
     $('.btn-edit-comment').on('click', (e) => {
-        console.log("OK")
-        $('.fotm-edit-comment').remove();
+        $('.form-edit-comment').remove();
         $('.btn-update-comment').remove();
         const $wrapper = $(e.target).closest('.comment-wrapper');
         const $textarea = $('<textarea name="comment"></textarea>');
-        $textarea.addClass('form-control');
-        $textarea.addClass('fotm-edit-comment');
+        $textarea.addClass('form-edit-comment');
 
         const id = $wrapper.data('id');
         const comment = $(`.comment-wrapper[data-id=${id}] .comment`).text();
@@ -19,7 +17,7 @@ $(document).ready(() => {
         const $row = $('<div class="row"></div>');
         const $col8 = $('<div class="col-8"></div>');
         const $col3 = $('<div class="col-3"></div>');
-        const $btnEdit = $('<button class="btn btn-sm btn-primary btn-update-comment"></button>').text('更新');
+        const $btnEdit = $('<button class="btn-update-comment"></button>').text('更新');
 
         $col8.append($textarea);
         $col3.append($btnEdit);
