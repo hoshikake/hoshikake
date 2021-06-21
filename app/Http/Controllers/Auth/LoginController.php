@@ -78,7 +78,6 @@ class LoginController extends Controller
         } else {
             $user = User::whereEmail($providerUser->getEmail())->first();
 
-            dd($providerUser);
             if (!$user) {
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
