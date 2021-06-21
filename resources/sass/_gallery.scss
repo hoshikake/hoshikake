@@ -228,7 +228,11 @@ $sub-color: #eee;
     }
 }
 // コメントページ
-.comment-container{
+.comment-top{
+    background-color: rgba(238, 238, 238, 0.616);
+    margin: 5%;
+    margin-bottom: 3em;
+    border-radius: 20%;
     .card{
         width: 300px;
         height: 300px;
@@ -253,17 +257,20 @@ $sub-color: #eee;
                 box-shadow: 2px 1px 2px #6989bb;
             }
         }
-        .comment-btns{
-            margin: 1em;
-            .comment-btn{
-                display: inline-block;
-                padding: 0.1em;
-                border: 1px solid #6b9cb2;
-                border-radius: 10%;
-                background-color: #57b2dc;
-                &:hover{
-                    box-shadow: 2px 1px 2px #6989bb;
-                }
+    }
+}
+
+.comment-container{
+    .comment-btns{
+        margin: 1em;
+        .comment-btn{
+            display: inline-block;
+            padding: 0.1em;
+            border: 1px solid #6b9cb2;
+            border-radius: 10%;
+            background-color: #57b2dc;
+            &:hover{
+                box-shadow: 2px 1px 2px #6989bb;
             }
         }
     }
