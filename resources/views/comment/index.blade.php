@@ -25,9 +25,9 @@
 </div>
 
 <div class="comment-container">
-    <div class="card-body">
+    <div class="">
         @if (session('status'))
-            <div class="alert alert-success" role="alert">
+            <div class="" role="alert">
                 {{ session('status') }}
             </div>
         @endif
@@ -40,7 +40,7 @@
             <label for="comment">コメント</label>
             <textarea class="" id="comment" name="comment" rows="3" required>{{ old('comment') }}</textarea>
             @if ($errors->has('comment'))
-                <div class="invalid-feedback">
+                <div class="">
                     <strong>{{ $errors->first('comment') }}</strong>
                 </div>
             @endif
@@ -54,19 +54,19 @@
 
         @if (count($comments) > 0)
             @foreach ($comments as $comment)
-                <form action="{{ route('comments.update', $comment) }}" method="post" class="form-update" data-id="{{ $comment->id }}">
+                <form action="{{ route('comments.update', $comment) }}" method="post" class="" data-id="{{ $comment->id }}">
                     @csrf
                     @method('PUT')
                 </form>
-                <div class="col border mb-1 comment-wrapper" data-id="{{ $comment->id }}">
+                <div class="" data-id="{{ $comment->id }}">
 
-                    <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
+                    <p class="">{!! nl2br(e($comment->comment)) !!}</p>
                     <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
                     @if ($comment->user->twitter_id)
-                        <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">{{ $post->user->name }}</a>
+                        <a href="{{ $comment->user->twitter_url }}" class="" target="_blank">{{ $post->user->name }}</a>
                     @endif
                     @if ($comment->user->id === Auth::user()->id)
-                        <button type="submit" class="btn btn-sm btn-primary btn-edit-comment">編集</button>
+                        <button type="submit" class="btn-edit-comment">編集</button>
                     @endif
 
                 </div>
@@ -76,7 +76,7 @@
         @endif
     </div>
 </div>
-<a href="{{ route('posts.index') }}" class="comment-btn">一覧に戻る</a>
+<a href="{{ route('posts.index') }}" class="">一覧に戻る</a>
 @endsection
 
 <!-- 編集効かない -->
