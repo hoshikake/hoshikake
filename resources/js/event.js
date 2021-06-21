@@ -32,9 +32,9 @@ $(document).ready(() => {
         $col8.append($textarea);
         $col3.append($btnEdit);
         $colDestroy.append($btnDestroy);
-        $rowEdit.append($col8).append($col3);
 
-        $rowEdit.append($colDestroy);
+        $rowEdit.append($col8).append($col3);
+        $rowDestroy.append($colDestroy);
 
         $formEdit.append($rowEdit);
         $formDestroy.append($rowDestroy);
