@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->unsignedBigInteger('user_id')->comment('投稿者ID');
             $table->string('work_url')->comment('ポートフォリオURL');
             $table->string('repo_url')->comment('リポジトリURL');
-            $table->text('comment')->comment('コメント');
+            $table->text('comment')->comment('コメント')->nullable(true)->default(null);
             $table->boolean('is_published')->comment('公開フラグ')->default(true);
             $table->timestamps();
         });
