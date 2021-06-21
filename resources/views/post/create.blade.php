@@ -47,7 +47,7 @@
             <textarea class="site-textarea"
                 id="comment" name="comment" rows="3">{{ old('comment') }}</textarea>
             @if ($errors->has('comment'))
-                <div class="invalid-feedback">
+                <div>
                     <strong>{{ $errors->first('comment') }}</strong>
                 </div>
             @endif
