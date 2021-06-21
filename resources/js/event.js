@@ -7,7 +7,7 @@ $(document).ready(() => {
         $('.form-edit-comment').remove();
         $('.btn-update-comment').remove();
         const $wrapper = $(e.target).closest('.comment-wrapper');
-        const $textarea = $('<textarea name="comment"></textarea>');
+        const $textarea = $('<textarea name="comment" required></textarea>');
         $textarea.addClass('form-edit-comment');
 
         const id = $wrapper.data('id');
