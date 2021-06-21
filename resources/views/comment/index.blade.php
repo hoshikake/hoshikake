@@ -46,7 +46,7 @@
             @endif
 
             <div class="comment-post">
-                <button type="submit" class=".comment-btn" require>
+                <button type="submit" class="comment-btn" require>
                     <i class="far fa-save"></i>投稿
                 </button>
             </div>
