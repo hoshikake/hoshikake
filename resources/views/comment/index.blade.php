@@ -25,9 +25,6 @@
 </div>
 
 <div class="comment-container">
-    <div class="">
-        コメント
-    </div>
     <div class="card-body">
         @if (session('status'))
             <div class="alert alert-success" role="alert">
@@ -99,3 +96,4 @@
 
 <!-- こめんとをぬるでおくるとエラー -->
 <!-- Twitterのないときは何も表示しない -->
+<!-- 編集効かない -->
