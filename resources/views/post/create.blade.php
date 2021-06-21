@@ -17,7 +17,7 @@
         @csrf
 
     {{-- ポートフォリオURL --}}
-            <label for="work_url">ポートフォリオURL</label>
+            <label for="work_url">サイトURL</label>
             <input type="text"
                 class="site-form-text {{ $errors->has('work_url') ? 'is-invalid' : '' }}"
                 id="work_url" name="work_url"
