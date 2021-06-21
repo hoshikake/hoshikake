@@ -84,6 +84,6 @@ class CommentController extends Controller
     public function destroy($id): RedirectResponse
     {
         Comment::destroy($id);
-        return redirect()->route('comments.index')->with(['status' => '削除完了しました。']);
+        return redirect()->route('comments.index', $comment->post)->with(['status' => '削除完了しました。']);
     }
 }
