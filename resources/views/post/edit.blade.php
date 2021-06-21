@@ -12,7 +12,7 @@
             </div>
         @endif
 
-        <form class="site-form"　action="{{ route('posts.update', $post) }}" method="POST">
+        <form class="site-form" action="{{ route('posts.update', $post) }}" method="POST">
             @csrf
             @method('PUT')
 
