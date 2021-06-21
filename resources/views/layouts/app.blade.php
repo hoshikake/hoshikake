@@ -43,7 +43,7 @@
                         <div>
                             <ul class="menu">
                                 <li>
-                                {{ Auth::user()->name }} ▼
+                                    {{ Auth::user()->name }} ▼
                                     <ul class="menu-sub">
                                         <li class="menu-margin"><a href="{{ route('edit') }}">twitter登録</a></li>
                                         <li><a href="{{ route('posts.create') }}">サイト設定</a></li>
