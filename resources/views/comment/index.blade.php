@@ -50,29 +50,30 @@
                     <i class="far fa-save"></i>投稿
                 </button>
             </div>
-            @if (count($comments) > 0)
-                @foreach ($comments as $comment)
-                    <form action="{{ route('comments.update', $comment) }}" method="post" class="form-update" data-id="{{ $comment->id }}">
-                        @csrf
-                        @method('PUT')
-                    </form>
-                    <div class="col border mb-1 comment-wrapper" data-id="{{ $comment->id }}">
-
-                        <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
-                        <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
-                        @if ($comment->user->twitter_id)
-                            <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">{{ $post->user->name }}</a>
-                        @endif
-                        @if ($comment->user->id === Auth::user()->id)
-                            <button type="submit" class="btn btn-sm btn-primary btn-edit-comment">編集</button>
-                        @endif
-
-                    </div>
-                @endforeach
-            @else
-                <p>コメントはまだありません。</p>
-            @endif
         </form>
+
+        @if (count($comments) > 0)
+            @foreach ($comments as $comment)
+                <form action="{{ route('comments.update', $comment) }}" method="post" class="form-update" data-id="{{ $comment->id }}">
+                    @csrf
+                    @method('PUT')
+                </form>
+                <div class="col border mb-1 comment-wrapper" data-id="{{ $comment->id }}">
+
+                    <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
+                    <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
+                    @if ($comment->user->twitter_id)
+                        <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">{{ $post->user->name }}</a>
+                    @endif
+                    @if ($comment->user->id === Auth::user()->id)
+                        <button type="submit" class="btn btn-sm btn-primary btn-edit-comment">編集</button>
+                    @endif
+
+                </div>
+            @endforeach
+        @else
+            <p>コメントはまだありません。</p>
+        @endif
     </div>
 </div>
 <a href="{{ route('posts.index') }}" class="comment-btn">一覧に戻る</a>
