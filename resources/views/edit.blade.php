@@ -3,7 +3,7 @@
 @section('content')
 <div class="twitter-container">
     @if (session('status'))
-    <div class="" role="alert">
+    <div class="twitter-complete" role="alert">
         {{ session('status') }}
     </div>
     @endif

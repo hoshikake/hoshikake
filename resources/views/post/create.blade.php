@@ -8,7 +8,7 @@
         </div>
 
     @if (session('status'))
-        <div class="" role="alert">
+        <div role="alert">
             {{ session('status') }}
         </div>
     @endif
@@ -16,10 +16,10 @@
     <form class="site-form" action="{{ route('posts.store') }}" method="POST">
         @csrf
 
-    {{-- ポートフォリオURL --}}
+            {{-- ポートフォリオURL --}}
             <label for="work_url">サイトURL</label>
             <input type="text"
-                class="site-form-text {{ $errors->has('work_url') ? 'is-invalid' : '' }}"
+                class="site-form-text"
                 id="work_url" name="work_url"
                 value="{{ old('work_url') }}">
             @if ($errors->has('work_url'))
@@ -28,11 +28,11 @@
                 </div>
             @endif
 
-    {{-- リポジトリURL --}}
+            {{-- リポジトリURL --}}
 
             <label for="repo_url">リポジトリURL</label>
             <input type="text"
-                class="site-form-text {{ $errors->has('repo_url') ? 'is-invalid' : '' }}"
+                class="site-form-text"
                 id="repo_url" name="repo_url"
                 value="{{ old('repo_url') }}">
             @if ($errors->has('repo_url'))
@@ -42,7 +42,7 @@
             @endif
 
 
-    {{-- コメント --}}
+            {{-- コメント --}}
             <label class="site-comment" for="comment">コメント</label>
             <textarea class="site-textarea"
                 id="comment" name="comment" rows="3">{{ old('comment') }}</textarea>
