@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    border: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+body{
+    height: 100%;
+    a{
+        text-decoration: none;
+    }
+}
+
+.content{
+    .title{
+        padding-top: 5em;
+    }
+    .login a{
+        display: block;
+        padding: 1em 2em;
+        margin: 0 auto;
+        margin-top: 4em;
+        border:1px solid #6b9cb2;
+        background-color: #57b2dc;
+        border-radius: 10%;
+        width: 56px;
+        height: 28px;
+        &:hover{
+            box-shadow: 2px 1px 2px #6989bb;
+            text-decoration: none;
+        }
+    }
+
+    .content-text{
+        margin-top: 2em;
+        h2{
+            margin-top: 2em;
+        }
+        p{
+            margin-top: 1em;
+        }
+    }
+}
+
+// 泡表現
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgb(159, 233, 233), rgb(7, 42, 83)) no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    }
+
+.bubbles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -40;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    animation: bubble 10s ease-in infinite;
+}
+
+.bubble:nth-child(1) {
+    width: 20px;
+    height: 20px;
+    left: 30%;
+    animation-duration: 6s;
+}
+
+.bubble:nth-child(2) {
+    left: 20%;
+    animation-duration: 3.5s;
+}
+
+.bubble:nth-child(3) {
+    width: 30px;
+    height: 30px;
+    left: 30%;
+    animation-duration: 7s;
+}
+
+.bubble:nth-child(4) {
+    width: 50px;
+    height: 50px;
+    left: 67%;
+    animation-duration: 6s;
+}
+
+.bubble:nth-child(5) {
+    width: 20px;
+    height: 20px;
+    left: 70%;
+    animation-duration: 4.5s;
+}
+
+@keyframes bubble {
+    0% {
+        bottom: -100px;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100px);
+    }
+    100% {
+        bottom: 1000px;
+    }
+}

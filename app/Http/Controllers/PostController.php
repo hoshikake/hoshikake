@@ -45,13 +45,11 @@ class PostController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $request->validate([
-            'work_url' => ['required', 'url'],
-            'repo_url' => ['required', 'url'],
-            'comment' => ['required', 'string'],
+            'work_url' => ['string', 'url'],
+            'repo_url' => ['string', 'url'],
         ], [], [
             'work_url' => 'ポートフォリオURL',
             'repo_url' => 'リポジトリURL',
-            'comment' => 'コメント',
         ]);
 
         /**
@@ -105,13 +103,11 @@ class PostController extends Controller
     public function update(Request $request, Post $post): RedirectResponse
     {
         $request->validate([
-            'work_url' => ['required', 'url'],
-            'repo_url' => ['required', 'url'],
-            'comment' => ['required', 'string'],
+            'work_url' => ['string', 'url'],
+            'repo_url' => ['string', 'url'],
         ], [], [
             'work_url' => 'ポートフォリオURL',
             'repo_url' => 'リポジトリURL',
-            'comment' => 'コメント',
         ]);
 
         $post->fill($request->all());

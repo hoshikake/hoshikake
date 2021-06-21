@@ -27,5 +27,15 @@ $(document).ready(() => {
         $form.append($row);
 
         $wrapper.append($form);
+
     });
+
+    $("ul.menu li").hover(
+        function() {
+          $(".menu-sub:not(:animated)", this).slideDown();
+        },
+        function() {
+          $(".menu-sub", this).slideUp();
+        }
+      );
 });
