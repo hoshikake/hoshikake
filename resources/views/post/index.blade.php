@@ -20,8 +20,6 @@
 
                     @if ($post->user->twitter_id)
                         <a href="{{ $post->user->twitter_url }}"  target="_blank">Twitter</a>
-                    @else
-                        <p>{{ $post->user->name }}</p>
                     @endif
 
                     <a href="{{ route('comments.index', $post) }}" >
