@@ -46,7 +46,7 @@
             @endif
 
             <div class="comment-post">
-                <button type="submit" class="" require>
+                <button type="submit" class=".comment-btn" require>
                     <i class="far fa-save"></i>投稿
                 </button>
             </div>
@@ -66,7 +66,7 @@
                         <a href="{{ $comment->user->twitter_url }}" class="" target="_blank">{{ $post->user->name }}</a>
                     @endif
                     @if ($comment->user->id === Auth::user()->id)
-                        <button type="submit" class="comment-edit btn-edit-comment">編集</button>
+                        <button type="submit" class="comment-edit comment-btn btn-edit-comment">編集</button>
                     @endif
 
                 </div>

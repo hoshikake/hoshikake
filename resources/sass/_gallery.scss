@@ -288,17 +288,15 @@ $sub-color: #eee;
     .comment-edit{
         margin-bottom: 1em;
     }
-    .comment-btns{
-        margin: 1em;
-        .comment-btn{
-            display: inline-block;
-            padding: 0.1em;
-            border: 1px solid #6b9cb2;
-            border-radius: 10%;
-            background-color: #57b2dc;
-            &:hover{
-                box-shadow: 2px 1px 2px #6989bb;
-            }
+    .comment-btn{
+        display: inline-block;
+        padding: 0.1em;
+        border: 1px solid #6b9cb2;
+        border-radius: 10%;
+        background-color: #57b2dc;
+        &:hover{
+            box-shadow: 2px 1px 2px #6989bb;
         }
     }
+
 }
