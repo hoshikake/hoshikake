@@ -39,28 +39,27 @@
                         <li>
                             <a href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
-
                     @else
-                    <div>
-                        <ul class="menu">
-                            <li>
-                            {{ Auth::user()->name }} ▼
-                                <ul class="menu-sub">
-                                    <li class="menu-margin"><a href="{{ route('edit') }}">twitter登録</a></li>
-                                    <li><a href="{{ route('posts.create') }}">サイト設定</a></li>
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
+                        <div>
+                            <ul class="menu">
+                                <li>
+                                {{ Auth::user()->name }} ▼
+                                    <ul class="menu-sub">
+                                        <li class="menu-margin"><a href="{{ route('edit') }}">twitter登録</a></li>
+                                        <li><a href="{{ route('posts.create') }}">サイト設定</a></li>
+                                        <li>
+                                            <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                                {{ __('Logout') }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
                     @endguest
                 </ul>
             </div>
@@ -68,11 +67,11 @@
     </div>
     @yield('content')
     <div class="bubbles">
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
-            <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
     </div>
 
 </body>
