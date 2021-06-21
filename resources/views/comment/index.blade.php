@@ -3,9 +3,9 @@
 @section('content')
 <div class="comment-top">
     <div class="comment-title">
-        <p>
+        <h2>
             comment
-        </p>
+        </h2>
     </div>
     <div class="card">
         <div class="card-header">
@@ -65,7 +65,7 @@
                     @if ($comment->user->twitter_id)
                         <a href="{{ $comment->user->twitter_url }}" class="" target="_blank">{{ $post->user->name }}</a>
                     @else
-                        {{ $post->user->name }}
+                        <!-- {{ $post->user->name }} -->
                     @endif
                     @if ($comment->user->id === Auth::user()->id)
                         <button type="submit" class="comment-edit comment-btn btn-edit-comment">編集</button>
