@@ -16,8 +16,6 @@
 
             @if ($post->user->twitter_id )
             <a href="{{ $post->user->twitter_url }}" target="_blank">Twitter</a>
-            @else
-            <p>{{ $post->user->name }}</p>
             @endif
             <a href="{{ route('posts.index') }}">一覧に戻る</a>
         </div>
@@ -32,7 +30,6 @@
             </div>
         @endif
 
-        <p>コメントを投稿する</p>
         <form action="{{ route('comments.store', $post) }}" method="post">
             @csrf
 
@@ -47,7 +44,6 @@
                 </div>
             @endif
 
-
             <div class="">
                 <button type="submit" class="">
                     <i class="far fa-save"></i>投稿
@@ -59,28 +55,19 @@
                     @csrf
                     @method('PUT')
                 </form>
-                <div class="row">
                     <div class="col border mb-1 comment-wrapper" data-id="{{ $comment->id }}">
-                        <div class="row">
-                            <div class="col">
+
                                 <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col mb-1">
                                 <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
                                 @if ($comment->user->twitter_id)
                                     <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">Twitter</a>
-                                @else
-                                    <p>{{ $comment->user->name }}</p>
+
                                 @endif
                                 @if ($comment->user->id === Auth::user()->id)
                                     <button type="submit" class="btn btn-sm btn-primary btn-edit-comment">編集</button>
                                 @endif
-                            </div>
-                        </div>
+
                     </div>
-                </div>
             @endforeach
         @else
             <p>コメントはまだありません。</p>
@@ -97,3 +84,4 @@
 <!-- こめんとをぬるでおくるとエラー -->
 <!-- Twitterのないときは何も表示しない -->
 <!-- 編集効かない -->
+<!-- できるコメントは一つ？？ -->
