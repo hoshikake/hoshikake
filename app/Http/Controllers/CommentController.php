@@ -78,12 +78,12 @@ class CommentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  Comment $comment
      * @return RedirectResponse
      */
-    public function destroy($id): RedirectResponse
+    public function destroy(Comment $comment): RedirectResponse
     {
-        Comment::destroy($id);
+        $comment->delete();
         return redirect()->route('comments.index', $comment->post)->with(['status' => '削除完了しました。']);
     }
 }
