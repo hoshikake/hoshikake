@@ -45,7 +45,7 @@
                 </div>
             @endif
 
-            <div class="">
+            <div class="comment-post">
                 <button type="submit" class="" require>
                     <i class="far fa-save"></i>投稿
                 </button>
@@ -54,14 +54,14 @@
 
         @if (count($comments) > 0)
             @foreach ($comments as $comment)
-                <form action="{{ route('comments.update', $comment) }}" method="post" class="" data-id="{{ $comment->id }}">
+                <form action="{{ route('comments.update', $comment) }}" method="post" class="comment-list" data-id="{{ $comment->id }}">
                     @csrf
                     @method('PUT')
                 </form>
                 <div class="" data-id="{{ $comment->id }}">
 
-                    <p class="">{!! nl2br(e($comment->comment)) !!}</p>
                     <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
+                    <p class="comment-display">{!! nl2br(e($comment->comment)) !!}</p>
                     @if ($comment->user->twitter_id)
                         <a href="{{ $comment->user->twitter_url }}" class="" target="_blank">{{ $post->user->name }}</a>
                     @endif
