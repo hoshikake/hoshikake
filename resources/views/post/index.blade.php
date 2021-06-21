@@ -14,7 +14,7 @@
                     </div>
                     <div class="flex-center">
                         <div class="gallery-link">
-                                <a href="{{ $post->work_url }}"  target="_blank">ポートフォリオ</a>
+                                <a href="{{ $post->work_url }}"  target="_blank">サイト</a>
                                 <a href="{{ $post->repo_url }}"  target="_blank">リポジトリ</a>
 
                                 <img src="{{ $post->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
