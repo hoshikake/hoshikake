@@ -37,8 +37,8 @@
 
             {{-- コメント --}}
 
-            <label for="comment">コメント</label>
-            <textarea class="" id="comment" name="comment" rows="3" required>{{ old('comment') }}</textarea>
+            <label class="comment-text" for="comment">コメント</label>
+            <textarea class="comment-textarea" id="comment" name="comment" rows="3" required>{{ old('comment') }}</textarea>
             @if ($errors->has('comment'))
                 <div class="">
                     <strong>{{ $errors->first('comment') }}</strong>
@@ -79,5 +79,3 @@
 <a href="{{ route('posts.index') }}" class="">一覧に戻る</a>
 @endsection
 
-<!-- 編集効かない -->
-<!-- できるコメントは一つ？？ -->

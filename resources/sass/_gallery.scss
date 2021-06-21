@@ -263,7 +263,17 @@ $sub-color: #eee;
     background-color: rgba(238, 238, 238, 0.616);
     margin: 5%;
     margin-bottom: 3em;
+    padding: 2em;
     border-radius: 45px;
+    .comment-text{
+        display: block;
+        margin: 0.5em;
+    }
+    .comment-textarea{
+        width: 400px;
+        height: 100px;
+        resize: none;
+    }
     .comment-btns{
         margin: 1em;
         .comment-btn{
