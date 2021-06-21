@@ -2,14 +2,13 @@
 
 @section('content')
 <div class="twitter-container">
+    @if (session('status'))
+    <div class="" role="alert">
+        {{ session('status') }}
+    </div>
+    @endif
 
     <div class="card">
-        @if (session('status'))
-        <div class="" role="alert">
-            {{ session('status') }}
-        </div>
-        @endif
-
         <div class="card-header">
             twitter登録
         </div>
