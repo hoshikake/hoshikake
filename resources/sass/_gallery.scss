@@ -229,10 +229,6 @@ $sub-color: #eee;
 }
 // コメントページ
 .comment-top{
-    background-color: rgba(238, 238, 238, 0.616);
-    margin: 5%;
-    margin-bottom: 3em;
-    border-radius: 20%;
     .card{
         width: 300px;
         height: 300px;
@@ -261,6 +257,10 @@ $sub-color: #eee;
 }
 
 .comment-container{
+    background-color: rgba(238, 238, 238, 0.616);
+    margin: 5%;
+    margin-bottom: 3em;
+    border-radius: 20%;
     .comment-btns{
         margin: 1em;
         .comment-btn{
