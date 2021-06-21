@@ -78,7 +78,6 @@
     </div>
 </div>
 <a href="{{ route('posts.index') }}" class="comment-btn">一覧に戻る</a>
-
 @endsection
 
 <!-- こめんとをぬるでおくるとエラー -->
