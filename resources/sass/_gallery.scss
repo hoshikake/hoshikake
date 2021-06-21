@@ -8,6 +8,10 @@ $sub-color: #eee;
     display: flex;
     justify-content: center;
 }
+.flex-around{
+    display: flex;
+    justify-content: space-around;
+}
 .container{
     padding: 1em 0;
     background-color: $sub-color;
@@ -126,10 +130,11 @@ $sub-color: #eee;
             &:hover{
                 box-shadow: 2px 1px 2px #6989bb;
             }
-            .gallery-comment{
-                margin: 0.5em;
-            }
         }
+    }
+    .gallery-comment{
+        width: 300px;
+        overflow-wrap: break-word;
     }
 }
 // Twitter登録
