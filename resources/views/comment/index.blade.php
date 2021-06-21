@@ -3,7 +3,9 @@
 @section('content')
 <div class="comment-top">
     <div class="comment-title">
-        ポートフォリオ
+        <p>
+            comment
+        </p>
     </div>
     <div class="card">
         <div class="card-header">
