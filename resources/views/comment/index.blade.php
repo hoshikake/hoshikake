@@ -58,6 +58,10 @@
                     @csrf
                     @method('PUT')
                 </form>
+                <form action="{{ route('comments.destroy', $comment) }}" method="post" class="comment-list form-destroy" data-id="{{ $comment->id }}">
+                    @csrf
+                    @method('DELETE')
+                </form>
                 <div class="comment-wrapper" data-id="{{ $comment->id }}">
 
                     <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
