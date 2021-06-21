@@ -119,11 +119,13 @@ $sub-color: #eee;
         }
         .gallery-link a{
             font-size: 1em;
-            padding: 0.5em;
-            margin: 0.5em;
+            padding: 0.2em;
+            margin: 0.5em auto;
             border: 1px solid #6b9cb2;
             border-radius: 10%;
             background-color: #57b2dc;
+            display: block;
+            width: 120px;
             &:hover{
                 box-shadow: 2px 1px 2px #6989bb;
             }

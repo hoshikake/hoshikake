@@ -12,24 +12,22 @@
             <div class="card">
                 <div class="card-header">
                     {{ $post->user->name }}
+                    <img src="{{ $post->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
                 </div>
-                <div class="flex-center">
-                    <div class="gallery-link">
-                            <a href="{{ $post->work_url }}"  target="_blank">サイト</a>
-                            <a href="{{ $post->repo_url }}"  target="_blank">リポジトリ</a>
+                <div class="gallery-link">
+                        <a href="{{ $post->work_url }}" target="_blank">サイト</a>
+                        <a href="{{ $post->repo_url }}" target="_blank">リポジトリ</a>
 
-                            <img src="{{ $post->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
-                        @if ($post->user->twitter_id)
-                            <a href="{{ $post->user->twitter_url }}"  target="_blank">Twitter</a>
-                        @else
-                            <p>{{ $post->user->name }}</p>
-                        @endif
-                        <p>
-                            <a href="{{ route('comments.index', $post) }}" >
-                                コメントをする
-                            </a>
-                        </p>
-                    </div>
+                    @if ($post->user->twitter_id)
+                        <a href="{{ $post->user->twitter_url }}"  target="_blank">Twitter</a>
+                    @else
+                        <p>{{ $post->user->name }}</p>
+                    @endif
+
+                    <a href="{{ route('comments.index', $post) }}" >
+                        コメントをする
+                    </a>
+
                 </div>
             </div>
             <div class="gallery-comment">
