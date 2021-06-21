@@ -8,17 +8,19 @@
                 {{ $post->user->name }}
                 <img src="{{ $post->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
             </div>
-            <div class="comment-btns">
-                <a href="{{ $post->work_url }}" class="comment-btn" target="_blank">ポートフォリオ</a>
+            <div class="comment-link">
+                <a href="{{ $post->work_url }}" class="comment-btn" target="_blank">サイト</a>
                 <a href="{{ $post->repo_url }}" class="comment-btn" target="_blank">リポジトリ</a>
+                <a href="{{ route('posts.index') }}" class="comment-btn">一覧に戻る</a>
+
                 @if ($post->user->twitter_id )
-                    <a href="{{ $post->user->twitter_url }}" class="comment-btn" target="_blank">Twitter</a>
+                <a href="{{ $post->user->twitter_url }}" class="comment-btn" target="_blank">Twitter</a>
                 @else
-                    <p>{{ $post->user->name }}</p>
+                <p>{{ $post->user->name }}</p>
                 @endif
             </div>
         </div>
-        <a href="{{ route('posts.index') }}" class="comment-btn">一覧に戻る</a>
+
 
 
     <div class="">
@@ -69,8 +71,7 @@
                 @csrf
 
                 {{-- コメント --}}
-                <div class="form-group row">
-                    <div class="col">
+
                         <label for="comment">コメント</label>
                         <textarea class="form-control {{ $errors->has('comment') ? 'is-invalid' : '' }}"
                             id="comment" name="comment" rows="3">{{ old('comment') }}</textarea>
@@ -79,11 +80,10 @@
                                 <strong>{{ $errors->first('comment') }}</strong>
                             </div>
                         @endif
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">
+
+                <div class="">
+                    <button type="submit" class="">
                         <i class="far fa-save"></i>投稿
                     </button>
                 </div>
@@ -91,6 +91,9 @@
             </form>
         </div>
     </div>
-
+    <a href="{{ route('posts.index') }}" class="comment-btn">一覧に戻る</a>
 </div>
 @endsection
+
+<!-- こめんとをぬるでおくるとエラー -->
+<!-- Twitterのないときは何も表示しない -->
