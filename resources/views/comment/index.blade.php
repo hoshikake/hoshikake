@@ -60,8 +60,9 @@
                         <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
                         <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
                         @if ($comment->user->twitter_id)
-                            <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">Twitter</a>
-
+                            <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">{{ $post->user->name }}</a>
+                        @else
+                        <p>{{ $post->user->name }}</p>
                         @endif
                         @if ($comment->user->id === Auth::user()->id)
                             <button type="submit" class="btn btn-sm btn-primary btn-edit-comment">編集</button>
