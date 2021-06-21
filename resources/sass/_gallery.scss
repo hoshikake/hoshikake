@@ -159,7 +159,7 @@ $sub-color: #eee;
         .twitter-form{
             outline: none;
             border: 1px solid #333;
-            border-radius: 10%;
+            border-radius: 10px;
             padding: 0.5em 0;
             margin: 0 0.5em;
         }
@@ -168,7 +168,7 @@ $sub-color: #eee;
             margin: 3em 2em 2em 2em;
             padding: 1em 2em;
             border: 1px solid #6b9cb2;
-            border-radius: 10%;
+            border-radius: 10px;
             background-color: #57b2dc;
             &:hover{
                 box-shadow: 2px 1px 2px #6989bb;
@@ -194,7 +194,7 @@ $sub-color: #eee;
             .site-form-text{
                 outline: none;
                 border: 1px solid #333;
-                border-radius: 10%;
+                border-radius: 10px;
                 display: block;
                 margin: 0 auto;
                 padding: 4px;
@@ -205,7 +205,7 @@ $sub-color: #eee;
             .site-textarea{
                 outline: none;
                 border: 1px solid #333;
-                border-radius: 10%;
+                border-radius: 10px;
                 resize: none;
             }
             .site-checkbox{
@@ -217,7 +217,7 @@ $sub-color: #eee;
                     display: inline-block;
                     padding: 0.1em;
                     border: 1px solid #6b9cb2;
-                    border-radius: 10%;
+                    border-radius: 10px;
                     background-color: #57b2dc;
                     &:hover{
                         box-shadow: 2px 1px 2px #6989bb;
