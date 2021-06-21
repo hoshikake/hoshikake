@@ -13,13 +13,13 @@
             </div>
         @endif
 
-        <form action="{{ route('posts.store') }}" method="POST">
+        <form class="site-form" action="{{ route('posts.store') }}" method="POST">
             @csrf
 
         {{-- ポートフォリオURL --}}
                 <label for="work_url">ポートフォリオURL</label>
                 <input type="text"
-                    class="form-control {{ $errors->has('work_url') ? 'is-invalid' : '' }}"
+                    class="site-form-text {{ $errors->has('work_url') ? 'is-invalid' : '' }}"
                     id="work_url" name="work_url"
                     value="{{ old('work_url') }}">
                 @if ($errors->has('work_url'))
@@ -32,7 +32,7 @@
 
                 <label for="repo_url">リポジトリURL</label>
                 <input type="text"
-                    class="form-control {{ $errors->has('repo_url') ? 'is-invalid' : '' }}"
+                    class="site-form-text {{ $errors->has('repo_url') ? 'is-invalid' : '' }}"
                     id="repo_url" name="repo_url"
                     value="{{ old('repo_url') }}">
                 @if ($errors->has('repo_url'))
@@ -43,8 +43,8 @@
 
 
         {{-- コメント --}}
-                <label for="comment">コメント</label>
-                <textarea class="form-control {{ $errors->has('comment') ? 'is-invalid' : '' }}"
+                <label class="site-comment" for="comment">コメント</label>
+                <textarea class="site-textarea"
                     id="comment" name="comment" rows="3">{{ old('comment') }}</textarea>
                 @if ($errors->has('comment'))
                     <div class="invalid-feedback">
@@ -57,7 +57,7 @@
                     <label for="is_published">公開する</label>
                 </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">
+                <button type="submit" class="site-btn">
                     <i class="far fa-save"></i>更新
                 </button>
             </div>

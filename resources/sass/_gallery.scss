@@ -177,9 +177,33 @@ $sub-color: #eee;
         margin: 2em auto;
         border-radius: 50%;
         .card-header{
-            margin: 6em 4em 3em 4em;
+            margin: 6em 4em 2em 4em;
             padding: 2em 0 1em 0;
             border-bottom: 1px solid #333;
+        }
+        .site-form{
+            font-size: 0.5em;
+            .site-form-text{
+                display: block;
+                margin: 0 auto;
+                padding: 4px;
+            }
+            .site-comment{
+                display: block;
+            }
+            .site-textarea{
+
+            }
+            .site-btn{
+                display: inline-block;
+                padding: 0.1em;
+                border: 1px solid #6b9cb2;
+                border-radius: 10%;
+                background-color: #57b2dc;
+                &:hover{
+                    box-shadow: 2px 1px 2px #6989bb;
+                }
+            }
         }
     }
 }
