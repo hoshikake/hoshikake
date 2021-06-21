@@ -8,7 +8,7 @@
     <div class="gallery-main">
         @if (count($posts) > 0)
         @foreach ($posts as $post)
-        <div class="flex-around">
+        <div class="flex-center">
             <div class="card">
                 <div class="card-header">
                     {{ $post->user->name }}

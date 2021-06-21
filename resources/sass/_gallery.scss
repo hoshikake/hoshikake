@@ -8,10 +8,7 @@ $sub-color: #eee;
     display: flex;
     justify-content: center;
 }
-.flex-around{
-    display: flex;
-    justify-content: space-around;
-}
+
 .container{
     padding: 1em 0;
     background-color: $sub-color;
@@ -110,11 +107,11 @@ $sub-color: #eee;
         width: 300px;
         height: 300px;
         background-color: rgba(238, 238, 238, 0.616);
-        margin: 2em auto;
+        margin: 2em;
         border-radius: 50%;
         .card-header{
-            margin: 6em 4em 2em 4em;
-            padding: 2em 0 1em 0;
+            margin: 1em 4em 2em 4em;
+            padding: 1em 0 1em 0;
             border-bottom: 1px solid #333;
         }
         .gallery-link p{
@@ -135,6 +132,7 @@ $sub-color: #eee;
     .gallery-comment{
         width: 300px;
         overflow-wrap: break-word;
+        margin: auto 2em;
     }
 }
 // Twitter登録
