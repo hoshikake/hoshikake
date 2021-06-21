@@ -281,7 +281,12 @@ $sub-color: #eee;
         margin-top: 1em;
     }
     .comment-display{
+        overflow-wrap: break-word;
         width: 400px;
+        margin: 0 auto;
+    }
+    .comment-edit{
+        margin-bottom: 1em;
     }
     .comment-btns{
         margin: 1em;
