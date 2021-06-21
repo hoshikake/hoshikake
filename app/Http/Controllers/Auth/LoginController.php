@@ -78,6 +78,10 @@ class LoginController extends Controller
         } else {
             $user = User::whereEmail($providerUser->getEmail())->first();
 
+            if ($providerUser->getName() === null) {
+                return redirect('/login')->with(['status' => 'Github上で名前を設定してください。']);
+            }
+
             if (!$user) {
                 $user = User::create([
                     'email' => $providerUser->getEmail(),
