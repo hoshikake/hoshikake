@@ -44,6 +44,14 @@ class PostController extends Controller
      */
     public function store(Request $request): RedirectResponse
     {
+        $request->validate([
+            'work_url' => ['string', 'url'],
+            'repo_url' => ['string', 'url'],
+        ], [], [
+            'work_url' => 'ポートフォリオURL',
+            'repo_url' => 'リポジトリURL',
+        ]);
+
         /**
          * @var User
          */
@@ -94,6 +102,14 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post): RedirectResponse
     {
+        $request->validate([
+            'work_url' => ['string', 'url'],
+            'repo_url' => ['string', 'url'],
+        ], [], [
+            'work_url' => 'ポートフォリオURL',
+            'repo_url' => 'リポジトリURL',
+        ]);
+
         $post->fill($request->all());
         $post->is_published = $request->is_published ? true : false;
         $post->save();
