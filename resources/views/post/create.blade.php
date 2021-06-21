@@ -53,11 +53,11 @@
             @endif
 
             <div class="flex-center">
-                <div class="icheck-primary">
+                <div class="icheck-primary site-checkbox">
                     <input type="checkbox" name="is_published" id="is_published">
                     <label for="is_published">公開する</label>
                 </div>
-                <div class="form-group">
+                <div class="site-btns">
                     <button type="submit" class="site-btn">
                         <i class="far fa-save"></i>更新
                     </button>
