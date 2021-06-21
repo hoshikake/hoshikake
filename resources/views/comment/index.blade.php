@@ -57,15 +57,15 @@
                 </form>
                     <div class="col border mb-1 comment-wrapper" data-id="{{ $comment->id }}">
 
-                                <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
-                                <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
-                                @if ($comment->user->twitter_id)
-                                    <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">Twitter</a>
+                        <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
+                        <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
+                        @if ($comment->user->twitter_id)
+                            <a href="{{ $comment->user->twitter_url }}" class="btn btn-sm btn-primary" target="_blank">Twitter</a>
 
-                                @endif
-                                @if ($comment->user->id === Auth::user()->id)
-                                    <button type="submit" class="btn btn-sm btn-primary btn-edit-comment">編集</button>
-                                @endif
+                        @endif
+                        @if ($comment->user->id === Auth::user()->id)
+                            <button type="submit" class="btn btn-sm btn-primary btn-edit-comment">編集</button>
+                        @endif
 
                     </div>
             @endforeach
