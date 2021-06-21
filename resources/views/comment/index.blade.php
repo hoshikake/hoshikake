@@ -54,18 +54,18 @@
 
         @if (count($comments) > 0)
             @foreach ($comments as $comment)
-                <form action="{{ route('comments.update', $comment) }}" method="post" class="comment-list" data-id="{{ $comment->id }}">
+                <form action="{{ route('comments.update', $comment) }}" method="post" class="comment-list form-update" data-id="{{ $comment->id }}">
                     @csrf
                     @method('PUT')
                 </form>
-                <div class="" data-id="{{ $comment->id }}">
+                <div class="comment-wrapper" data-id="{{ $comment->id }}">
 
                     <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
                     <p class="comment-display">{!! nl2br(e($comment->comment)) !!}</p>
                     @if ($comment->user->twitter_id)
                         <a href="{{ $comment->user->twitter_url }}" class="" target="_blank">{{ $post->user->name }}</a>
                     @else
-                        <!-- {{ $post->user->name }} -->
+                        {{ $post->user->name }}
                     @endif
                     @if ($comment->user->id === Auth::user()->id)
                         <button type="submit" class="comment-edit comment-btn btn-edit-comment">編集</button>
