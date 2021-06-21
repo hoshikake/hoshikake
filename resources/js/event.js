@@ -4,6 +4,7 @@
 /* jshint -W117 */
 $(document).ready(() => {
     $('.btn-edit-comment').on('click', (e) => {
+        console.log("OK")
         $('.fotm-edit-comment').remove();
         $('.btn-update-comment').remove();
         const $wrapper = $(e.target).closest('.comment-wrapper');
