@@ -1,5 +1,19 @@
 $sub-color: #eee;
 
+$breakpoints: (
+  'sm': 'screen and (max-width: 540px)',
+  'md': 'screen and (max-width: 760px)',
+  'lg': 'screen and (min-width: 1350px)',
+
+) !default;
+
+@mixin mq($breakpoint: md){
+    @media #{map-get($breakpoints, $breakpoint)}{
+        @content;
+    }
+}
+
+
 .flex-between{
     display: flex;
     justify-content: space-between;
@@ -7,6 +21,12 @@ $sub-color: #eee;
 .flex-center{
     display: flex;
     justify-content: center;
+}
+.flex-clear{
+    @include mq(md){
+        display: inline-block;
+        margin: o auto;
+    }
 }
 
 .container{
