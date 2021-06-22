@@ -6,6 +6,19 @@
     color: #333;
 }
 
+$breakpoints: (
+  'sm': 'screen and (max-width: 530px)',
+  'md': 'screen and (max-width: 740px)',
+  'lg': 'screen and (min-width: 1350px)',
+
+) !default;
+
+@mixin mq($breakpoint: md){
+    @media #{map-get($breakpoints, $breakpoint)}{
+        @content;
+    }
+}
+
 body{
     height: 100%;
     a{
@@ -16,6 +29,9 @@ body{
 .content{
     .title{
         padding-top: 5em;
+        span{
+            display: inherit;
+        }
     }
     .login a{
         display: block;
@@ -40,6 +56,11 @@ body{
         }
         p{
             margin-top: 1em;
+            .content-text-none{
+                @include mq(sm){
+                    display: none;
+                }
+            }
         }
     }
 }

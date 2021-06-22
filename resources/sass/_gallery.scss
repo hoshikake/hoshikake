@@ -1,5 +1,19 @@
 $sub-color: #eee;
 
+// $breakpoints: (
+//   'sm': 'screen and (max-width: 540px)',
+//   'md': 'screen and (max-width: 740px)',
+//   'lg': 'screen and (min-width: 1350px)',
+
+// ) !default;
+
+// @mixin mq($breakpoint: md){
+//     @media #{map-get($breakpoints, $breakpoint)}{
+//         @content;
+//     }
+// }
+
+
 .flex-between{
     display: flex;
     justify-content: space-between;
@@ -7,6 +21,12 @@ $sub-color: #eee;
 .flex-center{
     display: flex;
     justify-content: center;
+}
+.flex-clear{
+    @include mq(md){
+        display: inline-block;
+        margin: 0 auto 3em auto;
+    }
 }
 
 .container{
@@ -102,6 +122,15 @@ $sub-color: #eee;
 .gallery-container{
     .gallery-title{
         margin: 2em 0;
+    }
+
+    .gallery-main{
+        .gallery-comment{
+            p{
+                color: #eee;
+            }
+        }
+
     }
     .card{
         width: 300px;
@@ -273,9 +302,13 @@ $sub-color: #eee;
         width: 400px;
         height: 100px;
         outline: none;
+        padding: 0.3em;
         border: 1px solid #333;
         border-radius: 10px;
         resize: none;
+        @include mq(sm){
+            width: 280px;
+        }
     }
     .comment-post{
         margin-top: 1em;
@@ -287,11 +320,14 @@ $sub-color: #eee;
         overflow-wrap: break-word;
         width: 400px;
         margin: 0 auto;
+        @include mq(sm){
+            width: 280px;
+        }
     }
     .comment-edit{
         margin-bottom: 1em;
     }
-    .comment-btn, .btn-update-comment{
+    .comment-btn, .btn-update-comment, .btn-destroy-comment{
         display: inline-block;
         padding: 0.1em;
         border: 1px solid #6b9cb2;
