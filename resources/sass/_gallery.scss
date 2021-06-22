@@ -128,7 +128,7 @@ $breakpoints: (
         &:last-child{
             .gallery-comment{
                 p{
-                    @include mq(sm){
+                    @include mq(md){
                         color: #eee;
                     }
                 }
