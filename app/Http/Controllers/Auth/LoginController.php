@@ -56,7 +56,10 @@ class LoginController extends Controller
         }
 
         $authUser = $this->findOrCreateUser($user, $provider);
-        dd($authUser);
+        if ($authUser === null) {
+            // 名前がないときnull返す
+            return redirect('/login')->with(['status' => 'Github上で名前を設定してください。']);
+        }
         Auth::login($authUser, true);
         return redirect($this->redirectTo);
     }
@@ -66,7 +69,7 @@ class LoginController extends Controller
      *
      * @param Socialite $providerUser
      * @param string $provider('github')
-     * @return User
+     * @return User|null
      */
     public function findOrCreateUser($providerUser, $provider)
     {
@@ -81,7 +84,7 @@ class LoginController extends Controller
 
             \Log::debug($providerUser->getName());
             if (!$providerUser->getName()) {
-                return redirect('/login')->with(['status' => 'Github上で名前を設定してください。']);
+                return null;
             }
 
             if (!$user) {
