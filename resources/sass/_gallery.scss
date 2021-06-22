@@ -25,7 +25,7 @@ $breakpoints: (
 .flex-clear{
     @include mq(md){
         display: inline-block;
-        margin: o auto;
+        margin: 0 auto 3em auto;
     }
 }
 
