@@ -123,6 +123,18 @@ $breakpoints: (
     .gallery-title{
         margin: 2em 0;
     }
+
+    .gallery-main{
+        &:last-child{
+            .gallery-comment{
+                p{
+                    @include mq(sm){
+                        color: #eee;
+                    }
+                }
+            }
+        }
+    }
     .card{
         width: 300px;
         height: 300px;
