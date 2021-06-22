@@ -27,7 +27,7 @@
 <div class="comment-container">
     <div class="">
         @if (session('status'))
-            <div class="" role="alert">
+            <div role="alert">
                 {{ session('status') }}
             </div>
         @endif

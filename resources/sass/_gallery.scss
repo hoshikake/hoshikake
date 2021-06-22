@@ -293,9 +293,13 @@ $breakpoints: (
         width: 400px;
         height: 100px;
         outline: none;
+        padding: 0.5em;
         border: 1px solid #333;
         border-radius: 10px;
         resize: none;
+        @include mq(sm){
+            width: 300px;
+        }
     }
     .comment-post{
         margin-top: 1em;

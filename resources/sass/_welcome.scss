@@ -29,6 +29,9 @@ body{
 .content{
     .title{
         padding-top: 5em;
+        span{
+            display: inherit;
+        }
     }
     .login a{
         display: block;
