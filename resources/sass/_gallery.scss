@@ -293,12 +293,12 @@ $breakpoints: (
         width: 400px;
         height: 100px;
         outline: none;
-        padding: 0.5em;
+        padding: 0.3em;
         border: 1px solid #333;
         border-radius: 10px;
         resize: none;
         @include mq(sm){
-            width: 300px;
+            width: 280px;
         }
     }
     .comment-post{
@@ -311,6 +311,9 @@ $breakpoints: (
         overflow-wrap: break-word;
         width: 400px;
         margin: 0 auto;
+        @include mq(sm){
+            width: 280px;
+        }
     }
     .comment-edit{
         margin-bottom: 1em;
