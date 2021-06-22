@@ -125,15 +125,12 @@ $sub-color: #eee;
     }
 
     .gallery-main{
-        &:last-child{
-            .gallery-comment{
-                p{
-                    @include mq(md){
-                        color: #eee;
-                    }
-                }
+        .gallery-comment{
+            p{
+                color: #eee;
             }
         }
+
     }
     .card{
         width: 300px;
