@@ -53,39 +53,39 @@
                 </div>
             </form>
 
-            @if (count($comments) > 0)
-                @foreach ($comments as $comment)
-                    <form action="{{ route('comments.update', $comment) }}" method="post"
-                        class="comment-list form-update" data-id="{{ $comment->id }}">
-                        @csrf
-                        @method('PUT')
-                    </form>
-                    <form action="{{ route('comments.destroy', $comment) }}" method="post"
-                        class="comment-list form-destroy" data-id="{{ $comment->id }}">
-                        @csrf
-                        @method('DELETE')
-                    </form>
-                    <div class="comment-wrapper" data-id="{{ $comment->id }}">
+            @forelse ($comments as $comment)
+                <form action="{{ route('comments.update', $comment) }}" method="post" class="comment-list form-update"
+                    data-id="{{ $comment->id }}">
+                    @csrf
+                    @method('PUT')
+                </form>
+                <form action="{{ route('comments.destroy', $comment) }}" method="post" class="comment-list form-destroy"
+                    data-id="{{ $comment->id }}">
+                    @csrf
+                    @method('DELETE')
+                </form>
+                <div class="comment-wrapper" data-id="{{ $comment->id }}">
 
-                        <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
-                        <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
-                        @if ($comment->user->twitter_id)
-                            <a href="{{ $comment->user->twitter_url }}" class=""
-                                target="_blank">{{ $comment->user->name }}</a>
-                        @else
-                            {{ $comment->user->name }}
-                        @endif
-                        @if ($comment->user->id === Auth::user()->id)
-                            <button type="submit" class="comment-edit comment-btn btn-edit-comment">編集</button>
-                        @endif
+                    <img src="{{ $comment->user->avatar }}" alt="アイコン" style="height: 30px; width: 30px">
+                    <p class="comment">{!! nl2br(e($comment->comment)) !!}</p>
+                    @if ($comment->user->twitter_id)
+                        <a href="{{ $comment->user->twitter_url }}" class=""
+                            target="_blank">{{ $comment->user->name }}</a>
+                    @else
+                        {{ $comment->user->name }}
+                    @endif
+                    @if ($comment->user->id === Auth::user()->id)
+                        <button type="submit" class="comment-edit comment-btn btn-edit-comment">編集</button>
+                    @endif
 
-                    </div>
-                @endforeach
+                </div>
 
-                {{ $comments->links() }}
-            @else
+            @empty
                 <p>コメントはまだありません。</p>
-            @endif
+
+            @endforelse
+
+            {{ $comments->links() }}
         </div>
     </div>
     <a href="{{ route('posts.index') }}" class="">一覧に戻る</a>
