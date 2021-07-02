@@ -346,9 +346,10 @@ $sub-color: #eee;
         list-style: none;
         margin: 0.2em;
         padding: 0.3em;
+        color: #aaa;
         a{
             &:hover{
-             color: $sub-color;
+                color: $sub-color;
             }
         }
     }
