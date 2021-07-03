@@ -22,7 +22,7 @@
                 <label for="twitter_id" class="twitter-text">TwitterID</label>
                 <input type="text"
                     class="twitter-form {{ $errors->has('twitter_id') ? 'is-invalid' : '' }}"
-                    id="twitter_id" name="twitter_id" value="{{ old('twitter_id', $user->twitter_id) }}">
+                    id="twitter_id" name="twitter_id" value="{{ old('twitter_id', $user->twitter_id) }}" readonly>
                 @if ($errors->has('twitter_id'))
                     <div class="">
                         <strong>{{ $errors->first('twitter_id') }}</strong>
